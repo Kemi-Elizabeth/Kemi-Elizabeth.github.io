@@ -1,229 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disco Data - Kemi's Portfolio</title>
-    <!-- Link To CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Box Icons -->
-    <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kemi Elizabeth Ojogbede – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --card: #fff;
+  --border: #ddd;
+  --accent: #000;
+  --highlight: #f5f5f5;
+  --highlight-border: #ccc;
+}
+body.dark {
+  --bg: #111;
+  --text: #f2f2f2;
+  --card: #1a1a1a;
+  --border: #333;
+  --accent: #fff;
+  --highlight: #222;
+  --highlight-border: #555;
+}
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  transition: background 0.3s, color 0.3s;
+}
+nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0.8rem 2rem;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  z-index:1000;
+}
+nav .nav-links a {
+  margin-left:1.2rem;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  font-size:0.95rem;
+}
+nav #themeToggle {
+  background:var(--accent);
+  color:var(--card);
+  border:none;
+  padding:0.3rem 0.7rem;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+}
+header {
+  padding:1.5rem 2rem 1rem 2rem;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:1rem;
+  max-width:1100px;
+  margin:auto;
+}
+header img {
+  width:130px;
+  height:130px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid rgba(0,0,0,0.1);
+}
+header h1 { font-size:1.9rem; margin-bottom:0.3rem; }
+header p { font-size:1rem; opacity:0.85; margin-bottom:0.5rem; }
+.header-buttons a {
+  display:inline-block;
+  margin-right:0.6rem;
+  padding:0.3rem 0.7rem;
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--card);
+  background:var(--accent);
+  font-weight:600;
+  font-size:0.85rem;
+  transition: background 0.3s;
+}
+.header-buttons a:hover { background:var(--border); }
+section {
+  padding:1.5rem 2rem;
+  max-width:1100px;
+  margin:auto;
+}
+h2 {
+  font-size:1.7rem;
+  margin-bottom:0.6rem;
+  border-bottom:1px solid var(--border);
+  display:inline-block;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1rem;
+  margin-top:0.8rem;
+}
+.card {
+  background: var(--card);
+  border-radius:12px;
+  padding:1rem 1.2rem;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+.card a { color: var(--accent); text-decoration:none; font-weight:600; }
+.project-media img, .project-media video {
+  width:100%;
+  margin-top:0.6rem;
+  border-radius:12px;
+}
+.slideshow {
+  position:relative;
+  width:100%;
+  max-height:60vh;
+  overflow:hidden;
+  border-radius:12px;
+  margin-top:1rem;
+}
+.slideshow img {
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  transition: opacity 1s ease-in-out;
+}
+.slideshow img.active {
+  opacity:1;
+  position:relative;
+}
+.company-logos, .education-logos {
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.5rem;
+  justify-content:center;
+  margin-top:1rem;
+}
+.company-logos img, .education-logos img {
+  height:60px;
+  object-fit:contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+  display:block;
+  margin:auto;
+}
+.company-logos img:hover, .education-logos img:hover { filter:grayscale(0%); }
+video { width:100%; border-radius:12px; }
 
+/* Skills Cards */
+.skill-card {
+  background: var(--highlight);
+  font-weight: 400;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--highlight-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.skill-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.skill-list {
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+@media(min-width: 1200px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
 
+/* Education Section */
+.education-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.education-card {
+  flex: 1 1 300px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.education-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.education-card img {
+  height: 100px;
+  margin-bottom: 0.8rem;
+  object-fit: contain;
+}
+
+/* Responsive tweaks */
+@media(max-width: 1024px) {
+  .education-card { flex: 1 1 250px; }
+}
+@media(max-width: 768px) {
+  .education-logos { flex-direction: column; align-items: center; }
+  .education-card { flex: 1 1 auto; max-width: 90%; }
+}
+
+/* Footer */
+footer { padding:1.5rem; text-align:center; background: var(--card); border-top:1px solid var(--border); margin-top:2rem; font-size:0.9rem; }
+
+/* Responsive Header */
+@media(max-width:768px){
+  header { grid-template-columns:1fr; text-align:center; }
+  header img { margin:auto; }
+  .header-buttons { justify-content:center; margin-top:0.5rem; }
+  .slideshow { max-height:40vh; }
+}
+</style>
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-     
-        <a href="#" class="logo">Disco Data</a>
-        <div class="bx bx-menu" id="menu-icon"></div>
 
-        <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#writing">Writing</a></li>
-            <div class="bx bx-sun" id="darkmode"></div>
-        </ul>
-    </header>
-    <!-- Home -->
+<nav>
+  <div class="nav-links">
+    <a href="#speaking">Speaking</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#work">Experience</a>
+    <a href="#professional">Writing</a>
+  </div>
+  <button id="themeToggle">☀️/🌙</button>
+</nav>
 
-    <section class="home" id="home">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/kemi-elizabeth-ojogbede-629010156/"><i class='bx bxl-linkedin'></i></a>
-            <a href="mailto:kemi.e.ojogbede@gmail.com"><i class='bx bxs-envelope' ></i></a>
-        </div>
-        <div class="home-img">
-            <img src="Mask Group.png" alt="">
-            </div>    
-        </div>
-        <div class="home-text">
-            <span>Hello, I'm</span>
-            <h1>Kemi Ojogbede</h1>
-         
-            <p>I have two masters degrees: one in Data Science, 
-                another in Contemporay literature. I mainly use Python, but 
-                I'm also proficient in R and SQL as well as HTML, CSS and Javascript.<br><br>
-            <b>Fun fact:</b> I'm a former journalist with bylines in The Mirror, The Week UK 
-            and more. </p><br>
-            <a href="Kemi Elizabeth Ojogbede's CV_2024.pdf" class="btn">View CV</a>
-        </div>
+<header>
+  <img src="media/profile_pic/profile.jpeg" alt="Photo of Kemi Elizabeth" />
+  <div>
+    <h1>Kemi Elizabeth Ojogbede</h1>
+    <p>Senior Technical Writer & Developer Advocate • Python & AI • Documentation Strategist & Engineer</p>
+    <div class="header-buttons">
+      <a href="mailto:kemi.e.ojogbede@gmail.com">Email Me</a>
+      <a href="https://www.linkedin.com/in/kemi-elizabeth-ojogbede-629010156/" target="_blank">LinkedIn</a>
+      <a href="documents/cv.pdf" target="_blank">Download CV</a>
+    </div>
+  </div>
+</header>
 
-        <div class="scroll-down">
-            <a href="#about">
-                <i class='bx bx-mouse' ></i>
-                <span>Scroll Down</span>
-                <i class='bx bxs-down-arrow-alt' ></i>
-            </a>
-        </div>
-    </section>
+<section id="speaking">
+  <h2>Speaking & Conferences</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1rem;">
+    <video autoplay muted loop controls>
+      <source src="media/videos/symfonycon_2024.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop controls>
+      <source src="media/videos/symfonycon_2025.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="slideshow">
+    <img src="media/slideshow_pics/symfonycon_3.jpeg" alt="Slide 1">
+    <img src="media/slideshow_pics/symfonycon_4.jpeg" alt="Slide 2">
+    <img src="media/slideshow_pics/symfonycon_6.jpeg" alt="Slide 3">
+    <img src="media/slideshow_pics/symfonycon_8.jpeg" alt="Slide 4">
+    <img src="media/slideshow_pics/symfonycon_9.jpeg" alt="Slide 5">
+    <img src="media/slideshow_pics/symfonycon_10.jpeg" alt="Slide 6">
+    <img src="media/slideshow_pics/symfonycon_11.jpeg" alt="Slide 7">
+  </div>
+</section>
+
+<section id="projects">
+  <h2 style="display:flex; align-items:center; gap:0.5rem;">
+    <img src="media/logos/github.png" alt="GitHub" style="height:24px;"> GitHub & Projects
+  </h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AI Technical Documentation Analyzer</h3>
+      <p>Multi-persona technical documentation analysis tool using <strong>Python, FastAPI, HTML/CSS/JS</strong> and <strong>OpenAI API</strong>. Provides actionable feedback and iterative improvement workflows for documentation teams.</p>
+      <a href="https://github.com/Kemi-Elizabeth/AI-DocReviewer" target="_blank">View on GitHub</a>
+      <div class="project-media"></div>
+    </div>
+    <div class="card">
+      <h3>AI Blog Scraper + Tweet Generator</h3>
+      <p><strong>Python + Flask</strong> app converting long-form content into concise tweets using reasoning steps and LLMs. Supports content marketing and developer advocacy workflows.</p>
+      <a href="https://github.com/Kemi-Elizabeth/tweet-generator-app" target="_blank">View on GitHub</a>
+      <div class="project-media"></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills & Frameworks</h2>
+  <div class="grid">
+    <div class="skill-card">
+      <span class="skill-title"><span class="dot"></span>Python, Data Science & Developer Tools</span>
+      <span class="skill-list">(Python, Flask, FastAPI, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Web Scraping, APIs, Git, GitHub, CI/CD, Linear, Jira, Slack, Algolia, Looker, Tableau, Google Analytics, Vercel)</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-title"><span class="dot"></span>AI & LLMs</span>
+      <span class="skill-list">(LangChain, Hugging Face, Prompt Engineering, NLP, Sentiment Analysis, N-gram Analysis, Text Classification, LLM Pipelines, AI-assisted Coding Tools (GitHub Copilot, OpenAI Codex, Claude), AI Integrations for Developer Workflows)</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-title"><span class="dot"></span>Technical Writing & Documentation</span>
+      <span class="skill-list">(Docs-as-Code, API Documentation, SDKs, Webhooks, Integrations, CI/CD, Docusaurus, Hugo, Visual Studio Code, Markdown, Final Cut Pro, Content Strategy, Style Guides, Figma, Adobe Photoshop)</span>
+    </div>
+    <div class="skill-card">
+      <span class="skill-title"><span class="dot"></span>Public Speaking & Content</span>
+      <span class="skill-list">(Technical Talks, Workshops, Developer Advocacy, Conference Presentations, Blog Writing, Tutorials, Storytelling for Tech Audiences, Slide Deck Design, Information Architecture, Content Marketing)</span>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="education-logos">
+    <div class="card education-card">
+      <img src="media/logos/birkbeck1.png" alt="Birkbeck University">
+      <p><strong>Master of Science, Data Science</strong><br>Birkbeck University of London | 2019 - 2021</p>
+    </div>
+    <div class="card education-card">
+      <img src="media/logos/birkbeck1.png" alt="Birkbeck University">
+      <p><strong>Master of Arts, Contemporary Literature & Cultural Theory</strong><br>Birkbeck University of London | 2014 - 2016</p>
+    </div>
+    <div class="card education-card">
+      <img src="media/logos/nottingham.png" alt="University of Nottingham">
+      <p><strong>Bachelor of Arts, English with Creative Writing</strong><br>University of Nottingham | 2011 - 2014</p>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Professional Experience</h2>
+  <div class="company-logos">
+    <img src="media/logos/mirror.png" alt="The Mirror">
+    <img src="media/logos/amplience.png" alt="Amplience">
+    <img src="media/logos/upsun1.png" alt="Upsun">
+    <img src="media/logos/finder.png" alt="Finder UK">
+    <img src="media/logos/week.png" alt="The Week UK">
+    <img src="media/logos/mumsnet.png" alt="Mumsnet">
+    <img src="media/logos/phd.png" alt="PHD Media">
+  </div>
+</section>
+
+<section id="professional">
+  <h2>Writing Portfolio</h2>
+  <div class="grid">
+ <div class="card">
+  <h3>Technical Writing & Research</h3>
+  <p>Read through these examples of my published technical writing, developer documentation, and research work across APIs, software platforms, and data-driven analysis:</p>
+  <ul>
+    <!-- Technical Writing Links -->
+    <li><a href="https://amplience.com/developers/docs/apis/asset-management/" target="_blank">Amplience – Asset Management API</a></li>
+    <li><a href="https://amplience.com/developers/docs/apis/content-delivery/content-delivery-overview/" target="_blank">Amplience – Content Delivery Overview</a></li>
+    <li><a href="https://amplience.com/developers/docs/apis/content-delivery-graphql/overview/" target="_blank">Amplience – GraphQL Content Delivery</a></li>
+    <li><a href="https://amplience.com/developers/docs/dev-tools/cli-tool/" target="_blank">Amplience CLI Tool</a></li>
+    <li><a href="https://amplience.com/developers/docs/dev-tools/integrations-and-extensions/webhook-guides/" target="_blank">Amplience Webhook Guides</a></li>
+    <li><a href="https://amplience.com/developers/docs/apis/" target="_blank">Amplience API Reference</a></li>
+    <li><a href="https://docs.upsun.com/" target="_blank">Upsun Documentation</a></li>
+    <li><a href="https://docs.upsun.com/get-started/stacks/magento.html" target="_blank">Upsun – Magento Stack Guide</a></li>
+    <li><a href="https://docs.upsun.com/get-started/ai/using-the-mcp.html" target="_blank">Upsun – Using the MCP AI Tools</a></li>
+    <li><a href="https://docs.upsun.com/languages/php/frankenphp.html" target="_blank">Upsun – FrankenPHP Documentation</a></li>
+    <li><a href="https://docs.upsun.com/add-services/redis.html" target="_blank">Upsun – Redis Service Integration</a></li>
+    <li><a href="https://fixed.docs.upsun.com/dedicated-environments/overview.html" target="_blank">Upsun – Dedicated Environments Overview</a></li>
+    <li><a href="https://fixed.docs.upsun.com/increase-observability/metrics.html" target="_blank">Upsun – Metrics & Observability Guide</a></li>
+    <li><a href="https://docs.upsun.com/development/502-errors.html" target="_blank">Upsun – 502 Errors Guide</a></li>
+    <li><a href="https://docs.upsun.com/learn/overview/build-deploy.html#zero-downtime-deployments" target="_blank">Upsun – Zero Downtime Deployments</a></li>
+    <li><a href="https://devcenter.upsun.com/posts/deploying-with-lisp/" target="_blank">Upsun – Deploying with Lisp</a></li>
+    <li><a href="https://fixed.docs.upsun.com/dedicated-environments/dedicated-gen-2.html" target="_blank">Upsun – Dedicated Gen 2 Overview</a></li>
+    <li><a href="https://fixed.docs.upsun.com/dedicated-environments/dedicated-gen-2/environment-differences.html" target="_blank">Upsun – Gen 2 Environment Differences</a></li>
+    <li><a href="https://fixed.docs.upsun.com/dedicated-environments/backups-restores.html" target="_blank">Upsun – Backups & Restores</a></li>
     
-    <!-- Skills -->
-    <section class="skills" id="skills">
-        <div class="heading">
-            <h2>Technical skills</h2>
-        </div>
-        <!-- Skills Content -->
-        <div class="skills-container">
-            <div class="bars">
-                <!-- Box 1 -->
-                <div class="bars-box">
-                    <h3>Python</h3>
-                    <hr class="light-line">
-
-                    <div class="light-bar"><p>Pandas, Numpy, Scikit-Learn, NLTK, Matplotlib, Seaborn, Plotly, Dash, Requests, urllib3 and more</p></div>
-                    </div>
-                </div>
-                <!-- Box 2 -->
-                <div class="bars-box">
-                    <h3>R</h3>
-                    <hr class="light-line">
-
-                    <div class="light-bar"><p>GGPlot2, Tidyverse, Caret, Knitr, ReadXL, Readr, and more</p></div>
-                </div>
-                <!-- Box 3 -->
-                <div class="bars-box">
-                    <h3>SQL</h3>
-                    <hr class="light-line">
-                    <div class="light-bar"><p>Joins, Table creation, Conditional filters, Indexing,  Subqueries, basic PHP and more</p></div>
-                </div>
-                    <div class="bars-box">
-                        <h3>Scraping</h3>
-                        <hr class="light-line">
-
-                        <div class="light-bar"><p>BeautifulSoup4, Selenium, Requests, urllib3, Scrapy, JSON, Google Colab and more</p></div>
-                    </div>
-
-                        <div class="bars-box">
-                            <h3>NLP</h3>
-                            <hr class="light-line">
-
-                            <div class="light-bar"><p>NLTK, TextBlob, Pattern, SpaCy, Scikit-Learn and more</p></div>
-                        </div>
-                        <div class="bars-box">
-                            <h3>Adobe</h3>
-                            <hr class="light-line">
-
-                            <div class="light-bar"><p>Adobe Illustrator, Photoshop, InDesign and a little Premiere Pro</p></div>
-                        </div>
-
-                        <div class="bars-box">
-                            <h3>Frontend</h3>
-                            <hr class="light-line">
-
-                            <div class="light-bar"><p>Vanilla Javascript, React, Django, HTML, CSS, Sass, Bootstrap and Figma for UX design</p></div>
-                        </div>
-
-                        <div class="bars-box">
-                            <h3>Visualisation</h3>
-                            <hr class="light-line">
-
-                            <div class="light-bar"><p>Tableau, D3.js, Flourish, Infogram and visualisations coded in Python and R using relevant packages</p></div>
-                        </div>
-
-                    </div>
-    
-
-
- </section>
- <!-- Portfolio -->
-
-    <!-- Writing -->
-    <section class="portfolio" id="portfolio">
-        <div class="heading">
-            <h2>Data Science Portfolio</h2>
-            <span>click an image to access page link<i class='bx bx-down-arrow-alt' style="font-size:20px; margin-top:10px;"></i></span>
-        </div>
-        <div class="portfolio-content">
-            <div class="portfolio-img">
-                <a href="https://public.tableau.com/app/profile/kemi.ojogbede/viz/Pollution_15932697421580/Story1 ">
-                <img src="pollution.png" style="width:25.5rem;" alt="" title="Tableau Data Visualisation | How has pollution affected your borough?" ></a> 
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.finder.com/uk/millionaire-calculator">
-                <img src="million.gif" style="width:31.5rem;" title="Javascript Calculator | How long would it take you to become a millionaire?" alt=""></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.finder.com/uk/most-popular-streaming-service">
-                <img src="Scrape.gif" alt="" style="width:41rem;" title = "Scraping with Python and Selenium | Best streaming services according to IMDb and Rotten Tomatoes"></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.finder.com/uk/car-insurance-price-index">
-                <img src="Animated GIF-downsized_large.gif" style="width:38.5rem;" alt="" title = "Javascript calculator and interactive hover cars | Car Insurance Index"></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.finder.com/uk/pension-statistics">
-                <img src="Screenshot 2021-12-06 at 22.59.19.png" style="width:28rem" alt="" title = "Javascript calculator | Pension statistics"></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://public.tableau.com/app/profile/kemi.ojogbede/viz/Newsletteranalysis-lockdownversion/Story1">
-                <img src="revenue-graphs-1.jpeg" alt="" style="width:30rem;height:21rem;object-fit: cover;" title ="Tableau dashboard | e-commerce newsletter revenue reporting"></a>
-            </div>
-        </div>
-        <br><br>
-        <div class="journo-button">
-            <a href="https://www.finder.com/uk/author/kemiojogbede" class="btn">More research</a>
-        </div>
-    </section>
-
-
-    <!-- Writing -->
-    <section class="portfolio" id="writing">
-        <div class="heading">
-            <h2>Journalism Portfolio</h2>
-            <span>click an image to access page link<i class='bx bx-down-arrow-alt' style="font-size:20px;"></i></span>
-        </div>
-        <div class="portfolio-content">
-            <div class="portfolio-img">
-                <a href="https://www.3dsourced.com/feature-stories/future-3d-printed-clothing/">
-                <img src="https://media.wired.com/photos/5941eaf878ae4e10155a2e01/master/pass/1OSH3sEDe-A3ddNpnqXBy6Q-1.jpeg" alt="" title="The Inescapable Rise of 3D Printed Clothing | 3DSourced | 2020" ></a> 
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.mirror.co.uk/interactives/condoms-socks-wooden-spoons-weirdest-12372926">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/prince-harry-meghan-markle-wedding-960096296-1526921738.jpg" title="Weirdest royal wedding memorabilia | The Mirror | 2018" alt=""></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.theweek.co.uk/81701/genius-behind-the-gems-meet-julien-riad-sahyoun">
-                <img src="https://cdn.shopify.com/s/files/1/0534/1908/1921/files/slide2_1440x.jpg" alt="" style="width:25rem" title = "Genius behind the gems: Meet Julien Riad Sahyoun | The Week UK | 2017"></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.theweek.co.uk/80515/moonlight-can-barry-jenkinss-coming-of-age-tale-secure-an-oscar">
-                <img src="https://cdn.britannica.com/83/194183-050-95BC4118/Alex-Hibbert-Moonlight-Mahershala-Ali-Barry-Jenkins.jpg" alt="" title = "Moonlight: Can Barry Jenkins's coming-of-age tale secure an Oscar? | The Week UK | 2017"></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.theweek.co.uk/79827/seven-books-to-read-before-you-see-the-film-adaptation">
-                <img src="https://wp.dailybruin.com/images/2016/12/fences.jpg" alt="" title = "Eight books to read before you see the film adaptation | The Week UK | 2017"></a>
-            </div>
-            <div class="portfolio-img">
-                <a href="https://www.theweek.co.uk/78947/top-five-luxury-nail-bars-in-london">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-manicures-duck-and-dry-1603968130.jpg" alt="" title = "Top five luxury nail bars in London | The Week UK | 2017"></a>
-            </div>
-        </div>
-        <br><br>
-        <div class="journo-button">
-        <a href="https://www.kemielizabeth.com/" class="btn">More articles</a>
-    </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="footer">
-        <div class="footer-social">
-            <a href="https://www.linkedin.com/in/kemi-elizabeth-ojogbede-629010156/"><i class='bx bxl-linkedin' ></i></a>
-            <a href="mailto:kemi.e.ojogbede@gmail.com"><i class='bx bxs-envelope' ></i></a>
- 
-        </div>
-
-    </div>
-    <!-- Copyright -->
-    <div class="copyright">
-        <p>&#169; Disco Data All Right Reserved.</p>
-    </div>
+    <!-- Data & Research Links -->
+    <li><a href="https://public.tableau.com/app/profile/kemi.ojogbede/viz/Pollution_15932697421580/Story1" target="_blank">Data Visualization – Pollution Analysis (Tableau)</a></li>
+    <li><a href="https://www.finder.com/uk/pensions/pension-statistics" target="_blank">Pension Statistics – Finder UK</a></li>
+    <li><a href="https://www.finder.com/uk/savings-accounts/millionaire-calculator" target="_blank">Millionaire Calculator – Finder UK</a></li>
+    <li><a href="https://www.finder.com/uk/author/kemiojogbede" target="_blank">Research & Analysis – Finder UK Author Page</a></li>
+  </ul>
+  <p><em>These are just a selection of my technical writing, data, and research work.</em></p>
+</div>
 
 
 
-    <!-- Link To JS -->
-    <script src="main.js"></script>
+<div class="card">
+  <h3>Journalism</h3>
+  <p>Read through these examples of my published journalism work across national and international media outlets:</p>
+  <ul>
+    <li><a href="https://www.3dsourced.com/feature-stories/future-3d-printed-clothing/" target="_blank">Future of 3D Printed Clothing – 3DSourced</a></li>
+    <li><a href="https://www.mirror.co.uk/film/12-classic-films-shows-getting-13121602" target="_blank">Classic Films & Shows – The Mirror</a></li>
+    <li><a href="https://www.mirror.co.uk/film/horror-films-killer-animal-attacks-13045677" target="_blank">Horror Films – The Mirror</a></li>
+    <li><a href="https://www.cambridge-news.co.uk/interactives/instagram-essentials-7-apps-help-14837157" target="_blank">Instagram Essentials – Cambridge News</a></li>
+    <li><a href="https://www.mirror.co.uk/interactives/thanos-pennywise-six-unlikely-film-12468665" target="_blank">Thanos & Pennywise Interactive – The Mirror</a></li>
+    <li><a href="https://www.mirror.co.uk/interactives/things-friday-13th-instead-coping-12437863" target="_blank">Friday the 13th Survival Guide – The Mirror</a></li>
+    <li><a href="https://www.mirror.co.uk/interactives/khloe-kardashian-gives-birth-here-12356933" target="_blank">Khloé Kardashian Birth Announcement – The Mirror</a></li>
+    <li><a href="https://www.mirror.co.uk/interactives/condoms-socks-wooden-spoons-weirdest-12372926" target="_blank">Weirdest Household Items – The Mirror</a></li>
+    <li><a href="https://www.mirror.co.uk/interactives/50-shades-orange-most-hilarious-12425068" target="_blank">50 Shades of Orange – The Mirror</a></li>
+    <li><a href="https://theweek.com/76185/how-to-see-the-worlds-most-impressive-natural-phenomena-in-style" target="_blank">Natural Phenomena Travel Guide – The Week</a></li>
+    <li><a href="https://theweek.com/81559/the-best-workout-clothes-for-2017" target="_blank">Best Workout Clothes 2017 – The Week</a></li>
+    <li><a href="https://theweek.com/76916/top-five-moisturising-lipsticks-for-autumn" target="_blank">Top 5 Lipsticks for Autumn – The Week</a></li>
+    <li><a href="https://theweek.com/80515/moonlight-can-barry-jenkinss-coming-of-age-tale-secure-an-oscar" target="_blank">Moonlight Film Review – The Week</a></li>
+    <li><a href="https://theweek.com/81992/princess-dianas-most-iconic-dresses" target="_blank">Princess Diana’s Iconic Dresses – The Week</a></li>
+    <li><a href="https://theweek.com/81306/the-ultimate-valentines-day-gift-guide" target="_blank">Valentine’s Day Gift Guide – The Week</a></li>
+    <li><a href="https://theweek.com/80809/handy-tips-for-achieving-2017s-most-popular-beauty-goals" target="_blank">Beauty Goals 2017 – The Week</a></li>
+    <li><a href="http://www.theweek.co.uk/81701/genius-behind-the-gems-meet-julien-riad-sahyoun" target="_blank">The Genius Behind the Gems – The Week</a></li>
+    <li><a href="https://theweek.com/79394/best-make-up-and-beauty-gift-sets-for-christmas" target="_blank">Best Make-Up & Beauty Gift Sets – The Week</a></li>
+    <li><a href="https://theweek.com/78457/the-top-jewellery-trends-of-2016" target="_blank">Top Jewellery Trends of 2016 – The Week</a></li>
+    <li><a href="https://theweek.com/76512/five-beauty-trends-to-try-this-autumn" target="_blank">5 Beauty Trends to Try This Autumn – The Week</a></li>
+    <li><a href="https://theweek.com/77414/looks-real-make-up-camera-app-offers-virtual-makeover" target="_blank">Virtual Makeover App – The Week</a></li>
+    <li><a href="https://theweek.com/79051/top-15-luxury-candles-for-christmas-2016" target="_blank">Top 15 Luxury Candles – The Week</a></li>
+    <li><a href="https://theweek.com/make-up/78014/four-eye-shadow-looks-to-try-this-season" target="_blank">Four Eye-Shadow Looks – The Week</a></li>
+  </ul>
+  <p><em>These are just a selection of my journalism work.</em></p>
+</div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© Kemi Elizabeth Ojogbede • <a href="mailto:kemi.e.ojogbede@gmail.com">Email</a> • <a href="https://www.linkedin.com/in/kemi-elizabeth-ojogbede-629010156/" target="_blank">LinkedIn</a> • <a href="https://github.com/Kemi-Elizabeth" target="_blank">GitHub</a></p>
+</footer>
+
+<script>
+  const slides = document.querySelectorAll('.slideshow img');
+  let currentSlide = 0;
+  slides[currentSlide].classList.add('active');
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 4000);
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+  });
+</script>
+
 </body>
 </html>
