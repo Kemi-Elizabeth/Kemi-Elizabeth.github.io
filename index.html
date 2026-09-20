@@ -175,11 +175,11 @@ section + section { border-top: 1px solid var(--line); }
 .skills-top { padding-top: 0; }
 .skills-top .wrap { border-top: 1px solid var(--line); padding-top: clamp(2rem, 3vw, 3rem); }
 .skills-top .eyebrow { margin-bottom: 1.2rem; }
-.skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.4rem 1.6rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem 2.2rem; }
 .skills-grid h3 { font-size: .95rem; margin-bottom: .35rem; display: flex; align-items: center; gap: .5rem; }
 .skills-grid h3::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink); flex: 0 0 auto; }
 .skills-grid p { color: var(--muted); margin: 0; font-size: .95rem; line-height: 1.55; }
-@media (max-width: 1000px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1000px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .skills-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; } }
 @media (max-width: 420px) { .skills-grid { grid-template-columns: 1fr; } }
 
@@ -377,24 +377,28 @@ footer a:hover { text-decoration: underline; }
     <p class="eyebrow" id="skills-title">What I work with</p>
     <div class="skills-grid">
       <div>
-        <h3>Education and writing</h3>
-        <p>Curriculum design, docs-as-code, API reference, style guides, information architecture, Markdown and MDX, Docusaurus, Hugo, Mintlify</p>
+        <h3>Learning and curriculum</h3>
+        <p>Curriculum design for data, analytics and AI. Course authoring in Markdown and MDX, docs-as-code, API reference, style guides, information architecture. Peer review and quality checks on technical learning content. Docusaurus, Hugo, Mintlify.</p>
       </div>
       <div>
-        <h3>Code and data</h3>
-        <p>Python (Flask, FastAPI, pandas), JavaScript, React and TypeScript, d3.js, Playwright, SQL, Cypher and Neo4j, Git and GitHub, Tableau</p>
+        <h3>Data and analytics</h3>
+        <p>Python (pandas, Flask, FastAPI), SQL, Snowflake, Tableau, Looker and Looker Studio, Metabase, Excel and Google Sheets, d3.js, Cypher and Neo4j.</p>
       </div>
       <div>
         <h3>AI</h3>
-        <p>LLM pipelines, RAG, MCP, LangChain, prompt design, Claude and OpenAI APIs, AI-assisted coding with Claude Code, Cursor and Copilot</p>
+        <p>Generative AI and LLM pipelines, RAG, MCP, LangChain, prompt engineering. Claude, ChatGPT, Gemini and Microsoft Copilot. AI-assisted coding with Claude Code, Cursor and GitHub Copilot. AI ethics and responsible AI.</p>
+      </div>
+      <div>
+        <h3>Engineering</h3>
+        <p>JavaScript, React and TypeScript, Playwright, Git and GitHub, Postman, Vercel and GitHub Pages.</p>
       </div>
       <div>
         <h3>Design and video</h3>
-        <p>Figma, Canva, Photoshop, Final Cut Pro, DaVinci Resolve, Premiere Pro, Screen Studio</p>
+        <p>Figma, Canva, Photoshop, Final Cut Pro, DaVinci Resolve, Premiere Pro, Screen Studio.</p>
       </div>
       <div>
         <h3>Ways of working</h3>
-        <p>Cross-team documentation planning, Linear and Jira, Postman, Vercel and GitHub Pages, Google Analytics and search analytics</p>
+        <p>Agile and iterative delivery with Jira and Linear, cross-team documentation planning, Google Analytics and search analytics.</p>
       </div>
     </div>
   </div>
@@ -751,7 +755,7 @@ footer a:hover { text-decoration: underline; }
     <div class="about" style="align-items:center">
       <div class="bio">
         <p>I started as a journalist, writing for national newspapers like The Mirror UK, then marketing and data journalism work at Mumsnet and Finder, data visualisation engineering at a media agency, and then I was writing API documentation and doing developer advocacy from then onwards.</p>
-        <p>At Neo4j I write and film courses for GraphAcademy to teach people how to use graph data, build features on the learning platform, and attend meetups and conferences. Outside work I build things like the projects above, mostly because I want to see them exist. Based just outside London.</p>
+        <p>At Neo4j I write and film courses for GraphAcademy to teach people how to use graph data, build features on the learning platform, and attend meetups and conferences. Outside work I build things like the projects above, mostly out of curiosity. Based just outside London.</p>
       </div>
 
       <div>
