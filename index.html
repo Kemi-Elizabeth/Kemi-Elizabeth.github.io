@@ -193,6 +193,16 @@ section + section { border-top: 1px solid var(--line); }
 .edu-card p { margin: 0; color: var(--muted); font-size: .98rem; }
 @media (max-width: 860px) { .edu-grid { grid-template-columns: 1fr; } }
 
+/* ---------- Mobile "More" toggles ---------- */
+details.fold > summary { display: none; }
+@media (max-width: 720px) {
+  details.fold > summary { display: inline-flex; align-items: center; gap: .35rem; cursor: pointer; list-style: none; font-weight: 600; font-size: .92rem; color: var(--muted); margin: .2rem 0 .6rem; }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before { content: "+"; font-size: 1.1rem; line-height: 1; }
+  details.fold[open] > summary::before { content: "–"; }
+  details.fold[open] > summary { margin-bottom: .6rem; }
+}
+
 /* ---------- Cards (shared) ---------- */
 .card, .talk, .vid {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
@@ -357,7 +367,7 @@ footer a:hover { text-decoration: underline; }
       <p class="eyebrow">Developer education · Developer advocacy · Technical writing</p>
       <h1 id="hero-title">Hi, I'm <span>Kemi</span>.</h1>
       <p class="lede">I write courses and documentation, give talks, make videos, and build tools with AI. I'm currently on the GraphAcademy team at Neo4j, but before that, I was doing developer documentation and advocacy, data visualisation engineering, content marketing and data journalism. I have two Master's degrees: one in Data Science and another in Contemporary Literature.</p>
-      <p class="also">I design in Figma and Photoshop and edit video in Final Cut Pro, DaVinci Resolve and Premiere Pro. I'll build anything I find interesting, but I like it most when other people find it interesting too, especially when it's riding a trend. Mostly, I like teaching people things.</p>
+      <details class="fold" open><summary>More about me</summary><p class="also">I design in Figma and Photoshop and edit video in Final Cut Pro, DaVinci Resolve and Premiere Pro. I'll build anything I find interesting, but I like it most when other people find it interesting too, especially when it's riding a trend. Mostly, I like teaching people things.</p></details>
       <div class="cta">
         <a class="btn primary" href="#speaking">See the work</a>
         <a class="btn" href="mailto:kemi.e.ojogbede@gmail.com">Email</a>
@@ -420,7 +430,7 @@ footer a:hover { text-decoration: underline; }
         </a>
         <div class="body">
           <h3>Code and Conscience: Ethical Docs for AI</h3>
-          <p class="meta">SymfonyCon Amsterdam · November 2025 · How to document AI features honestly: what they can do, what they can't, and where bias and privacy come in</p>
+          <p class="meta">SymfonyCon Amsterdam · November 2025 · Documenting AI features honestly: capabilities, limits, bias and privacy</p>
           <p class="meta"><a class="ext" href="https://live.symfony.com/account/replay/video/1215" target="_blank" rel="noopener">Watch the replay</a> (free SymfonyConnect login)</p>
         </div>
       </article>
@@ -432,7 +442,7 @@ footer a:hover { text-decoration: underline; }
         </button>
         <div class="body">
           <h3>The role of empathy in technical writing</h3>
-          <p class="meta">SymfonyCon Vienna · December 2024 · Why documentation that assumes the reader's situation is documentation that gets used</p>
+          <p class="meta">SymfonyCon Vienna · December 2024 · Why docs that understand the reader are the docs that get used</p>
           <p class="meta"><a class="ext" href="https://www.youtube.com/watch?v=_g0KQh5rdBo" target="_blank" rel="noopener">Watch the replay for free on YouTube</a></p>
         </div>
       </article>
@@ -444,7 +454,7 @@ footer a:hover { text-decoration: underline; }
         </div>
         <div class="body">
           <h3>Using d3.js + graph data to visualise The Odyssey</h3>
-          <p class="meta">Neo4j meetup, London · 2026 · The data modelling decisions that made the visualisation easier to build</p>
+          <p class="meta">Neo4j meetup, London · 2026 · The modelling decisions behind the visualisation</p>
           <p class="meta"><a class="ext" href="https://www.linkedin.com/posts/kemi-elizabeth-ojogbede-629010156_feel-free-to-watch-me-get-extremely-excited-ugcPost-7488562353849040896-69iz/" target="_blank" rel="noopener">See the post on LinkedIn</a></p>
         </div>
       </article>
@@ -457,7 +467,7 @@ footer a:hover { text-decoration: underline; }
         </video>
         <div class="body">
           <h3>On camera: why I chose this layout</h3>
-          <p class="meta">Neo4j · 2026 · A short interview about the Odyssey visualisation and what a hive plot shows that the usual layout hides</p>
+          <p class="meta">Neo4j · 2026 · A short interview on the Odyssey visualisation and why I chose a hive plot</p>
         </div>
       </article>
       <article class="vid tall">
@@ -506,9 +516,9 @@ footer a:hover { text-decoration: underline; }
         <div class="body">
           <div class="tags"><span>d3.js</span><span>JavaScript</span><span>Neo4j</span><span>Data modelling</span></div>
           <h3>The Odyssey, three ways</h3>
-          <p><strong>What.</strong> An interactive visualisation of <em>The Odyssey</em> across three tellings: Homer's poem, <em>EPIC: The Musical</em> and Christopher Nolan's 2026 film. Hover any character, place, song or actor and it tells you the story behind it. Switch on previews and the songs play.</p>
-          <p><strong>How.</strong> I built the dataset by hand: 130 characters, places, songs and actors, and 235 relationships between them. I loaded it into a Neo4j database, then drew it with d3.js as a hive plot, a layout that gives each type of thing its own axis so the connections between them stay readable instead of collapsing into a hairball.</p>
-          <p><strong>Why.</strong> The film was coming out, the musical was everywhere, and I wanted to know whether the three versions actually tell the same story. They don't quite. Building it also exposed a missing connection that weeks of reading the data in a spreadsheet had hidden, which became a piece for Nightingale.</p>
+          <p><strong>What.</strong> An interactive visualisation of <em>The Odyssey</em> across three tellings: Homer's poem, <em>EPIC: The Musical</em> and Christopher Nolan's 2026 film. Hover anything for the story behind it; switch on previews and the songs play.</p>
+          <details class="fold" open><summary>How and why</summary><p><strong>How.</strong> I built the dataset by hand (130 nodes, 235 relationships), loaded it into Neo4j, then drew it with d3.js as a hive plot: each type of thing gets its own axis, so the connections stay readable instead of collapsing into a hairball.</p>
+          <p><strong>Why.</strong> The film was coming out, the musical was everywhere, and I wanted to know whether the three versions tell the same story. They don't quite. Building it also exposed a missing connection a spreadsheet had hidden, which became a piece for Nightingale.</p></details>
           <div class="actions">
             <a class="ext" href="https://kemi-elizabeth.github.io/odyssey_graph/" target="_blank" rel="noopener">Open it</a>
             <a class="ext" href="https://nightingaledvs.com/the-plot-hole-only-a-graph-could-find/" target="_blank" rel="noopener">Nightingale piece</a>
@@ -525,9 +535,9 @@ footer a:hover { text-decoration: underline; }
         <div class="body">
           <div class="tags"><span>d3.js</span><span>JavaScript</span><span>iTunes API</span><span>Wikipedia API</span></div>
           <h3>The BeyHive Plot</h3>
-          <p><strong>What.</strong> Beyoncé's solo discography as one interactive picture: eight albums wearing their own cover art, over 100 songs coloured by era, all seven tours, and every credited collaborator with a live Wikipedia bio. Toggle previews, hover a song, and it plays.</p>
-          <p><strong>How.</strong> I didn't use a database for this one. The structure (albums, tours, era facts) is hand-curated in the file. The visualisation includes album tracklists, artwork and 30-second previews from the iTunes Search API, collaborator photos and bios from Wikipedia's API.</p>
-          <p><strong>Why.</strong> Once I'd worked out the layout on <em>The Odyssey</em>, I wanted to try it on a dataset I'm actually obsessed with.</p>
+          <p><strong>What.</strong> Beyoncé's solo discography as one interactive picture: eight albums as their own cover art, 100+ songs coloured by era, all seven tours, and every collaborator with a live Wikipedia bio. Hover a song and it plays.</p>
+          <details class="fold" open><summary>How and why</summary><p><strong>How.</strong> I didn't use a database for this one. The structure (albums, tours, era facts) is hand-curated in the file. The visualisation includes album tracklists, artwork and 30-second previews from the iTunes Search API, collaborator photos and bios from Wikipedia's API.</p>
+          <p><strong>Why.</strong> Once I'd worked out the layout on <em>The Odyssey</em>, I wanted to try it on a dataset I'm actually obsessed with.</p></details>
           <div class="actions">
             <a class="ext" href="https://kemi-elizabeth.github.io/beyhive_plot/" target="_blank" rel="noopener">Open it</a>
             <a class="ext" href="https://github.com/Kemi-Elizabeth/beyhive_plot" target="_blank" rel="noopener">Code</a>
@@ -543,8 +553,8 @@ footer a:hover { text-decoration: underline; }
           <div class="tags"><span>React</span><span>TypeScript</span><span>Product</span></div>
           <h3>Notes and highlights for GraphAcademy</h3>
           <p><strong>What.</strong> A note-taking feature on Neo4j's free learning platform. Select any text or image in a lesson, highlight it, add a note, and everything you save collects on a "Your notes" page at the end of the course.</p>
-          <p><strong>How.</strong> I built it in React and TypeScript inside the platform's codebase. The hard parts were anchoring a highlight to text that can change between site rebuilds, and making a save feel instant even when the network isn't.</p>
-          <p><strong>Why.</strong> I wanted learners to be able to keep what they'd found useful without leaving the lesson to do it.</p>
+          <details class="fold" open><summary>How and why</summary><p><strong>How.</strong> I built it in React and TypeScript inside the platform's codebase. The hard parts were anchoring a highlight to text that can change between site rebuilds, and making a save feel instant even when the network isn't.</p>
+          <p><strong>Why.</strong> I wanted learners to be able to keep what they'd found useful without leaving the lesson to do it.</p></details>
           <div class="actions">
             <a class="ext" href="https://graphacademy.neo4j.com/" target="_blank" rel="noopener">GraphAcademy</a>
             <!-- TODO: when the blog post about building the notes feature is published, add:
@@ -560,9 +570,9 @@ footer a:hover { text-decoration: underline; }
         <div class="body">
           <div class="tags"><span>Python</span><span>FastAPI</span><span>OpenAI API</span></div>
           <h3>Empathometer</h3>
-          <p><strong>What.</strong> A documentation review tool that reads a page the way different readers would: a junior developer, a business user, a senior developer, an AI agent. Paste in a page, pick a persona, and it tells you where that reader would get stuck and what to change.</p>
-          <p><strong>How.</strong> Python and FastAPI on the back end, plain HTML, CSS and JavaScript on the front, with the OpenAI API doing the reading. Each persona is a prompt with a point of view, not a checklist.</p>
-          <p><strong>Why.</strong> I built it to help technical writers produce documentation that doesn't assume a particular level of understanding, by showing them how a page reads to someone who isn't them.</p>
+          <p><strong>What.</strong> A documentation review tool that reads a page as different readers would: junior developer, business user, senior developer, AI agent. Pick a persona and it tells you where that reader gets stuck.</p>
+          <details class="fold" open><summary>How and why</summary><p><strong>How.</strong> Python and FastAPI, plain HTML, CSS and JavaScript, with the OpenAI API doing the reading. Each persona is a prompt with a point of view, not a checklist.</p>
+          <p><strong>Why.</strong> I built it to help technical writers produce documentation that doesn't assume a particular level of understanding, by showing them how a page reads to someone who isn't them.</p></details>
           <div class="actions">
             <a class="ext" href="https://github.com/Kemi-Elizabeth/AI-DocReviewer" target="_blank" rel="noopener">Code</a>
           </div>
@@ -576,9 +586,9 @@ footer a:hover { text-decoration: underline; }
         <div class="body">
           <div class="tags"><span>Python</span><span>Flask</span><span>LLMs</span></div>
           <h3>uptweet</h3>
-          <p><strong>What.</strong> A small web app that takes a long developer blog post and turns it into short social posts, showing the reasoning it used so you can correct it rather than just accept it.</p>
-          <p><strong>How.</strong> Python and Flask, with an LLM doing the first draft and a person keeping the voice.</p>
-          <p><strong>Why.</strong> I was on a team of developer advocates who were publishing blog posts every week but didn't have time to write the social copy to promote them, so I built this to help.</p>
+          <p><strong>What.</strong> A small web app that turns a developer blog post into short social posts, and shows its reasoning so you can correct it rather than just accept it.</p>
+          <details class="fold" open><summary>How and why</summary><p><strong>How.</strong> Python and Flask, with an LLM doing the first draft and a person keeping the voice.</p>
+          <p><strong>Why.</strong> I was on a team of developer advocates who were publishing blog posts every week but didn't have time to write the social copy to promote them, so I built this to help.</p></details>
           <div class="actions">
             <a class="ext" href="https://github.com/Kemi-Elizabeth/tweet-generator-app" target="_blank" rel="noopener">Code</a>
           </div>
@@ -691,19 +701,19 @@ footer a:hover { text-decoration: underline; }
         <div class="logo"><img src="media/logos/birkbeck.png" alt="Birkbeck, University of London" loading="lazy"></div>
         <div class="degree">MSc Data Science</div>
         <div class="school">Birkbeck, University of London · 2019 to 2021 · part-time, alongside full-time work</div>
-        <p>Programming in Python, R and Java. Statistics and the analytical foundations of data science. Machine learning and natural language processing. Data and knowledge management, including relational databases and SQL. Finished with a supervised research project on a real dataset.</p>
+        <p>Python, R and Java. Statistics, machine learning and natural language processing. Data management and SQL. A supervised research project to finish.</p>
       </article>
       <article class="edu-card">
         <div class="logo"><img src="media/logos/birkbeck.png" alt="Birkbeck, University of London" loading="lazy"></div>
         <div class="degree">MA Contemporary Literature &amp; Cultural Theory</div>
         <div class="school">Birkbeck, University of London · 2014 to 2016 · part-time</div>
-        <p>Twenty-first-century literature and critical theory: how narrative form changes with new technology, and how culture is read, argued about and written up. Assessed through research essays and a 15,000-word dissertation of independent research.</p>
+        <p>Twenty-first-century literature and critical theory: how narrative form changes with technology, and how culture is read and argued about. Research essays and a 15,000-word dissertation.</p>
       </article>
       <article class="edu-card">
         <div class="logo"><img src="media/logos/nottingham.png" alt="University of Nottingham" loading="lazy"></div>
         <div class="degree">BA English with Creative Writing</div>
         <div class="school">University of Nottingham · 2011 to 2014</div>
-        <p>Two-thirds English literature and language, from Old English to contemporary writing, with linguistics and discourse analysis. One-third creative writing, taught in workshops: fiction, poetry, narrative voice, structure and editing.</p>
+        <p>Two-thirds literature and language, Old English to contemporary, with linguistics. One-third creative writing in workshops: fiction, poetry, structure and editing.</p>
       </article>
     </div>
   </div>
@@ -831,6 +841,13 @@ footer a:hover { text-decoration: underline; }
   document.querySelectorAll('.menu a').forEach(function (a) {
     a.addEventListener('click', function () { a.closest('details').removeAttribute('open'); });
   });
+
+  // "More" folds: open on wide screens, collapsed on phones.
+  (function () {
+    var mq = window.matchMedia('(max-width: 720px)');
+    function apply() { document.querySelectorAll('details.fold').forEach(function (d) { d.open = !mq.matches; }); }
+    apply(); mq.addEventListener ? mq.addEventListener('change', apply) : mq.addListener(apply);
+  })();
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
