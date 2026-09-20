@@ -265,6 +265,14 @@ details.more summary::before { content: "+"; font-size: 1.2rem; line-height: 1; 
 details.more[open] summary::before { content: "–"; }
 @media (max-width: 760px) { .writing-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
+/* ---------- LinkedIn ---------- */
+.li-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+.li-post { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.li-post iframe { display: block; width: 100%; height: 560px; border: 0; background: #fff; }
+.li-more { margin-top: 1.5rem; }
+@media (max-width: 1000px) { .li-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .li-grid { grid-template-columns: 1fr; } }
+
 /* ---------- About ---------- */
 .about { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: start; }
 .about .bio { font-size: 1.1rem; }
@@ -300,6 +308,7 @@ footer a:hover { text-decoration: underline; }
       <a href="#speaking">Speaking</a>
       <a href="#work">Work</a>
       <a href="#writing">Writing</a>
+      <a href="#linkedin">LinkedIn</a>
       <a href="#education">Education</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -311,6 +320,7 @@ footer a:hover { text-decoration: underline; }
           <li><a href="#speaking">Speaking</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#writing">Writing</a></li>
+          <li><a href="#linkedin">LinkedIn</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -355,7 +365,7 @@ footer a:hover { text-decoration: underline; }
     <div class="skills-grid">
       <div>
         <h3>Education and writing</h3>
-        <p>Curriculum design, course scripting and filming, tutorials, docs-as-code, API reference, style guides, information architecture, Markdown and MDX, Docusaurus, Hugo, Mintlify</p>
+        <p>Curriculum design, docs-as-code, API reference, style guides, information architecture, Markdown and MDX, Docusaurus, Hugo, Mintlify</p>
       </div>
       <div>
         <h3>Code and data</h3>
@@ -635,32 +645,55 @@ footer a:hover { text-decoration: underline; }
   </div>
 </section>
 
+<!-- ============ LINKEDIN ============ -->
+<section id="linkedin" aria-labelledby="linkedin-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">On LinkedIn</p>
+      <h2 id="linkedin-title">Recent posts.</h2>
+      <p>A few recent posts. The rest, and the conversation around them, are on LinkedIn.</p>
+    </div>
+    <div class="li-grid">
+      <!-- To add a post: copy its link on LinkedIn, take the long number at the end (before the "?"), and paste it into a new block like this one. -->
+      <div class="li-post">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7495469648537333760" title="LinkedIn post: Data Visualization Society on The Plot Hole Only a Graph Could Find" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="li-post">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7494488909595406336" title="LinkedIn post by Kemi Elizabeth Ojogbede" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="cta li-more">
+      <a class="btn" href="https://www.linkedin.com/in/kemi-elizabeth-ojogbede-629010156/" target="_blank" rel="noopener">Follow me on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ EDUCATION ============ -->
 <section id="education" aria-labelledby="education-title">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Education</p>
-      <h2 id="education-title">A dataset and a story, at the same time.</h2>
-      <p>Two Master's degrees, in subjects that don't usually sit together. Between them, they're the reason my projects tend to be about data and about people at once.</p>
+      <h2 id="education-title">Education.</h2>
+      <p>Two Master's degrees and a BA, 2011 to 2021.</p>
     </div>
     <div class="edu-grid">
       <article class="edu-card">
         <div class="logo"><img src="media/logos/birkbeck.png" alt="Birkbeck, University of London" loading="lazy"></div>
         <div class="degree">MSc Data Science</div>
-        <div class="school">Birkbeck, University of London · 2019 to 2021</div>
-        <p>Statistics, machine learning and Python, studied in the evenings while working full time. It's where the data side of everything on this page comes from.</p>
+        <div class="school">Birkbeck, University of London · 2019 to 2021 · part-time, alongside full-time work</div>
+        <p>Programming in Python, R and Java. Statistics and the analytical foundations of data science. Machine learning and natural language processing. Data and knowledge management, including relational databases and SQL. Finished with a supervised research project on a real dataset.</p>
       </article>
       <article class="edu-card">
         <div class="logo"><img src="media/logos/birkbeck.png" alt="Birkbeck, University of London" loading="lazy"></div>
         <div class="degree">MA Contemporary Literature &amp; Cultural Theory</div>
-        <div class="school">Birkbeck, University of London · 2014 to 2016</div>
-        <p>Critical theory and the contemporary novel: how stories are built, and how culture reads them. It's why I can explain a system as a narrative, and why the Odyssey project exists.</p>
+        <div class="school">Birkbeck, University of London · 2014 to 2016 · part-time</div>
+        <p>Twenty-first-century literature and critical theory: how narrative form changes with new technology, and how culture is read, argued about and written up. Assessed through research essays and a 15,000-word dissertation of independent research.</p>
       </article>
       <article class="edu-card">
         <div class="logo"><img src="media/logos/nottingham.png" alt="University of Nottingham" loading="lazy"></div>
         <div class="degree">BA English with Creative Writing</div>
         <div class="school">University of Nottingham · 2011 to 2014</div>
-        <p>Where the writing started. Close reading, workshopping and editing, which turned out to be most of what documentation is.</p>
+        <p>Two-thirds English literature and language, from Old English to contemporary writing, with linguistics and discourse analysis. One-third creative writing, taught in workshops: fiction, poetry, narrative voice, structure and editing.</p>
       </article>
     </div>
   </div>
