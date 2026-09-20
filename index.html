@@ -168,6 +168,28 @@ section + section { border-top: 1px solid var(--line); }
   .portrait img { aspect-ratio: 4 / 3; object-position: 50% 20%; }
 }
 
+/* ---------- Skills (top) ---------- */
+.skills-top { padding-top: 0; }
+.skills-top .wrap { border-top: 1px solid var(--line); padding-top: clamp(2rem, 3vw, 3rem); }
+.skills-top .eyebrow { margin-bottom: 1.2rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.4rem 1.6rem; }
+.skills-grid h3 { font-size: .95rem; margin-bottom: .35rem; display: flex; align-items: center; gap: .5rem; }
+.skills-grid h3::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: 0 0 auto; }
+.skills-grid p { color: var(--muted); margin: 0; font-size: .95rem; line-height: 1.55; }
+@media (max-width: 1000px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .skills-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; } }
+@media (max-width: 420px) { .skills-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Education ---------- */
+.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.edu-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem 1.5rem 1.6rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .6rem; }
+.edu-card .logo { display: inline-flex; align-items: center; width: fit-content; height: 56px; padding: .45rem .8rem; background: #fff; border: 1px solid var(--line); border-radius: 10px; margin-bottom: .5rem; }
+.edu-card .logo img { max-height: 40px; width: auto; }
+.edu-card .degree { font-weight: 700; font-size: 1.15rem; letter-spacing: -.02em; line-height: 1.2; }
+.edu-card .school { color: var(--muted); font-size: .92rem; }
+.edu-card p { margin: 0; color: var(--muted); font-size: .98rem; }
+@media (max-width: 860px) { .edu-grid { grid-template-columns: 1fr; } }
+
 /* ---------- Cards (shared) ---------- */
 .card, .talk, .vid {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
@@ -198,8 +220,15 @@ section + section { border-top: 1px solid var(--line); }
 .vid.tall video { aspect-ratio: 9 / 16; max-height: 560px; margin: 0 auto; }
 .vid .body { padding: 1rem 1.25rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; }
 .vid h3 { font-size: 1.05rem; }
-.strip { display: flex; gap: .8rem; overflow-x: auto; padding-bottom: .6rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-.strip img { height: 190px; width: auto; border-radius: 10px; scroll-snap-align: start; flex: 0 0 auto; }
+.strip-wrap { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.strip-wrap .eyebrow { margin-bottom: .2rem; }
+.strip-wrap .strip-lede { color: var(--muted); margin: 0 0 1.2rem; font-size: 1rem; }
+.strip-outer { position: relative; }
+.strip-outer::after { content: ""; position: absolute; top: 0; right: 0; bottom: .8rem; width: 72px; background: linear-gradient(90deg, transparent, var(--bg)); pointer-events: none; }
+.strip { display: flex; gap: 1rem; overflow-x: auto; padding: .25rem .25rem .9rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+.strip img { height: 260px; width: auto; border-radius: 12px; scroll-snap-align: start; flex: 0 0 auto; box-shadow: var(--shadow); transition: transform .2s; }
+.strip img:hover { transform: translateY(-3px); }
+@media (max-width: 640px) { .strip img { height: 200px; } }
 @media (max-width: 900px) { .talks { grid-template-columns: 1fr; } .videos { grid-template-columns: 1fr; } .vid.tall video { max-height: 640px; } }
 
 /* ---------- Work ---------- */
@@ -239,9 +268,6 @@ details.more[open] summary::before { content: "–"; }
 /* ---------- About ---------- */
 .about { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: start; }
 .about .bio { font-size: 1.1rem; }
-.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem 2rem; margin-top: 2.4rem; padding-top: 2.2rem; border-top: 1px solid var(--line); }
-.skills h3 { font-size: 1rem; margin-bottom: .3rem; }
-.skills p { color: var(--muted); margin: 0; font-size: .98rem; }
 .timeline { border-left: 2px solid var(--line); padding-left: 1.4rem; }
 .timeline li { position: relative; padding-bottom: 1.1rem; }
 .timeline li::before { content: ""; position: absolute; left: calc(-1.4rem - 6px); top: .5rem; width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
@@ -249,11 +275,7 @@ details.more[open] summary::before { content: "–"; }
 .timeline .when { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .timeline .what { font-weight: 600; }
 .timeline .where { color: var(--muted); }
-.edu { margin-top: 1.6rem; }
-.edu li { padding: .45rem 0; border-top: 1px dashed var(--line); }
-.edu li:first-child { border-top: 0; }
-.edu .what { font-weight: 600; }
-@media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 2rem; } .skills { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 2rem; } }
 
 /* ---------- Contact & footer ---------- */
 .contact { background: var(--bg-2); }
@@ -278,6 +300,7 @@ footer a:hover { text-decoration: underline; }
       <a href="#speaking">Speaking</a>
       <a href="#work">Work</a>
       <a href="#writing">Writing</a>
+      <a href="#education">Education</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -288,6 +311,7 @@ footer a:hover { text-decoration: underline; }
           <li><a href="#speaking">Speaking</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#writing">Writing</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -308,7 +332,7 @@ footer a:hover { text-decoration: underline; }
     <div>
       <p class="eyebrow">Developer education · Developer advocacy · Technical writing</p>
       <h1 id="hero-title">I make technical things <span>easier to learn</span>.</h1>
-      <p class="lede">I'm Kemi. I write courses and documentation, give talks, make videos, and build tools with AI to speed all of that up. Currently on the GraphAcademy team at Neo4j; before that, developer documentation and advocacy at Upsun and Amplience.</p>
+      <p class="lede">I'm Kemi. I write courses and documentation, give talks, make videos, and build tools with AI to speed all of that up. Currently on the GraphAcademy team at Neo4j; before that, developer documentation and advocacy at Upsun and Amplience. Two Master's degrees behind it: one in Data Science, one in Contemporary Literature.</p>
       <p class="also">I design in Figma and Photoshop and edit video in Final Cut Pro, DaVinci Resolve and Premiere Pro. I'll build anything I find interesting, and I like it most when other people find it interesting too, especially when it's riding a trend. Mostly, I like teaching people things.</p>
       <div class="cta">
         <a class="btn primary" href="#speaking">See the work</a>
@@ -320,6 +344,35 @@ footer a:hover { text-decoration: underline; }
     </div>
     <div class="portrait">
       <img src="media/photos/hero.webp" width="1000" height="1250" alt="Kemi Elizabeth Ojogbede speaking on stage at SymfonyCon Amsterdam 2025" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="skills-top" aria-labelledby="skills-title">
+  <div class="wrap">
+    <p class="eyebrow" id="skills-title">What I work with</p>
+    <div class="skills-grid">
+      <div>
+        <h3>Education and writing</h3>
+        <p>Curriculum design, course scripting and filming, tutorials, docs-as-code, API reference, style guides, information architecture, Markdown and MDX, Docusaurus, Hugo, Mintlify</p>
+      </div>
+      <div>
+        <h3>Code and data</h3>
+        <p>Python (Flask, FastAPI, pandas), JavaScript, React and TypeScript, d3.js, Playwright, SQL, Cypher and Neo4j, Git and GitHub, Tableau</p>
+      </div>
+      <div>
+        <h3>AI</h3>
+        <p>LLM pipelines, RAG, MCP, LangChain, prompt design, Claude and OpenAI APIs, AI-assisted coding with Claude Code, Cursor and Copilot</p>
+      </div>
+      <div>
+        <h3>Design and video</h3>
+        <p>Figma, Canva, Photoshop, Final Cut Pro, DaVinci Resolve, Premiere Pro, Screen Studio</p>
+      </div>
+      <div>
+        <h3>Ways of working</h3>
+        <p>Cross-team documentation planning, Linear and Jira, Postman, Vercel and GitHub Pages, Google Analytics and search analytics</p>
+      </div>
     </div>
   </div>
 </section>
@@ -389,6 +442,10 @@ footer a:hover { text-decoration: underline; }
       </article>
     </div>
 
+    <div class="strip-wrap">
+      <p class="eyebrow">On stage and in the room</p>
+      <p class="strip-lede">SymfonyCon Vienna 2024 and Amsterdam 2025. Scroll for more.</p>
+      <div class="strip-outer">
     <div class="strip" aria-label="Photos from SymfonyCon">
       <img src="media/photos/symfonycon_8.webp" width="1400" height="933" alt="Kemi on stage at SymfonyCon Amsterdam 2025" loading="lazy">
       <img src="media/photos/symfonycon_3.webp" width="1400" height="933" alt="Kemi presenting at SymfonyCon Vienna 2024" loading="lazy">
@@ -397,6 +454,8 @@ footer a:hover { text-decoration: underline; }
       <img src="media/photos/symfonycon_4.webp" width="1400" height="933" alt="Kemi speaking at SymfonyCon Vienna" loading="lazy">
       <img src="media/photos/symfonycon_11.webp" width="1400" height="933" alt="Speakers on stage at SymfonyCon Amsterdam 2025" loading="lazy">
       <img src="media/photos/symfonycon_9.webp" width="1400" height="933" alt="Kemi at the podium at SymfonyCon Amsterdam 2025" loading="lazy">
+    </div>
+      </div>
     </div>
   </div>
 </section>
@@ -459,6 +518,8 @@ footer a:hover { text-decoration: underline; }
           <p><strong>Why.</strong> I wanted learners to be able to keep what they'd found useful without leaving the lesson to do it.</p>
           <div class="actions">
             <a class="ext" href="https://graphacademy.neo4j.com/" target="_blank" rel="noopener">GraphAcademy</a>
+            <!-- TODO: when the blog post about building the notes feature is published, add:
+            <a class="ext" href="URL" target="_blank" rel="noopener">How I built it</a> -->
           </div>
         </div>
       </article>
@@ -573,6 +634,37 @@ footer a:hover { text-decoration: underline; }
   </div>
 </section>
 
+<!-- ============ EDUCATION ============ -->
+<section id="education" aria-labelledby="education-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Education</p>
+      <h2 id="education-title">A dataset and a story, at the same time.</h2>
+      <p>Two Master's degrees, in subjects that don't usually sit together. Between them, they're the reason my projects tend to be about data and about people at once.</p>
+    </div>
+    <div class="edu-grid">
+      <article class="edu-card">
+        <div class="logo"><img src="media/logos/birkbeck.png" alt="Birkbeck, University of London" loading="lazy"></div>
+        <div class="degree">MSc Data Science</div>
+        <div class="school">Birkbeck, University of London · 2019 to 2021</div>
+        <p>Statistics, machine learning and Python, studied in the evenings while working full time. It's where the data side of everything on this page comes from.</p>
+      </article>
+      <article class="edu-card">
+        <div class="logo"><img src="media/logos/birkbeck.png" alt="Birkbeck, University of London" loading="lazy"></div>
+        <div class="degree">MA Contemporary Literature &amp; Cultural Theory</div>
+        <div class="school">Birkbeck, University of London · 2014 to 2016</div>
+        <p>Critical theory and the contemporary novel: how stories are built, and how culture reads them. It's why I can explain a system as a narrative, and why the Odyssey project exists.</p>
+      </article>
+      <article class="edu-card">
+        <div class="logo"><img src="media/logos/nottingham.png" alt="University of Nottingham" loading="lazy"></div>
+        <div class="degree">BA English with Creative Writing</div>
+        <div class="school">University of Nottingham · 2011 to 2014</div>
+        <p>Where the writing started. Close reading, workshopping and editing, which turned out to be most of what documentation is.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ABOUT ============ -->
 <section id="about" aria-labelledby="about-title">
   <div class="wrap">
@@ -580,29 +672,10 @@ footer a:hover { text-decoration: underline; }
       <p class="eyebrow">About</p>
       <h2 id="about-title">The long way round.</h2>
     </div>
-    <div class="about">
+    <div class="about" style="align-items:center">
       <div class="bio">
         <p>I came to developer education through journalism, content, data and documentation, in that order. National newspapers first, then content and data work at Mumsnet and Finder, a stint as a data visualisation engineer at a media agency, and four years writing API documentation and doing developer advocacy at Amplience and Upsun.</p>
-        <p>At Neo4j I write and film courses for GraphAcademy, build features on the learning platform, and co-host a women in tech meetup at the London office. I have two Master's degrees, one in Data Science and one in Contemporary Literature, which is why the projects above are about Homer and Beyoncé rather than sales data. Based just outside London.</p>
-
-        <div class="skills">
-          <div>
-            <h3>Education and writing</h3>
-            <p>Curriculum design, course scripting and filming, docs-as-code, API reference, style guides, information architecture</p>
-          </div>
-          <div>
-            <h3>Code and data</h3>
-            <p>Python (Flask, FastAPI, pandas), JavaScript, React and TypeScript, d3.js, SQL, Cypher and Neo4j, Tableau</p>
-          </div>
-          <div>
-            <h3>AI</h3>
-            <p>LLM pipelines, RAG, MCP, LangChain, prompt design, Claude and OpenAI APIs, AI-assisted coding</p>
-          </div>
-          <div>
-            <h3>Design and video</h3>
-            <p>Figma, Photoshop, Final Cut Pro, DaVinci Resolve, Premiere Pro, Screen Studio</p>
-          </div>
-        </div>
+        <p>At Neo4j I write and film courses for GraphAcademy, build features on the learning platform, and co-host a women in tech meetup at the London office. Outside work I build things like the projects above, mostly because I want to see them exist. Based just outside London.</p>
       </div>
 
       <div>
@@ -614,11 +687,6 @@ footer a:hover { text-decoration: underline; }
           <li><span class="when">2020 to 2022</span><br><span class="what">Content Marketing &amp; Data Manager</span><br><span class="where">Finder UK</span></li>
           <li><span class="when">2018 to 2020</span><br><span class="what">Commercial Content Creator, then Email Specialist</span><br><span class="where">Mumsnet</span></li>
           <li><span class="when">2016 to 2018</span><br><span class="what">Journalist</span><br><span class="where">The Mirror, The Week UK, Grazia UK</span></li>
-        </ul>
-        <ul class="edu" aria-label="Education">
-          <li><span class="what">MSc Data Science</span><br><span class="muted">Birkbeck, University of London · 2021</span></li>
-          <li><span class="what">MA Contemporary Literature &amp; Cultural Theory</span><br><span class="muted">Birkbeck, University of London · 2016</span></li>
-          <li><span class="what">BA English with Creative Writing</span><br><span class="muted">University of Nottingham · 2014</span></li>
         </ul>
       </div>
     </div>
