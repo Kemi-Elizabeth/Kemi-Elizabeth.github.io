@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kemi Elizabeth Ojogbede</title>
-<meta name="description" content="Kemi Elizabeth Ojogbede: developer educator at Neo4j GraphAcademy. Courses, interactive graph visualisations, and writing on graphs, data and AI.">
+<meta name="description" content="Kemi Elizabeth Ojogbede: developer educator, technical writer and speaker. Courses, documentation, talks, video, and tools built with AI.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Kemi Elizabeth Ojogbede">
-<meta property="og:description" content="Developer educator at Neo4j. Courses, interactive graph visualisations, and writing on graphs, data and AI.">
+<meta property="og:description" content="Developer educator, technical writer and speaker. Courses, documentation, talks, video, and tools built with AI.">
 <meta property="og:image" content="https://kemi-elizabeth.github.io/media/work/odyssey-hive.webp">
 <meta property="og:url" content="https://kemi-elizabeth.github.io/">
 <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
   // Apply the saved theme before first paint so there is no flash.
   (function () {
@@ -28,56 +28,47 @@
   })();
 </script>
 <style>
-/* ---------- Tokens ---------- */
+/* ---------- Tokens: near-white / near-black neutrals, one accent ---------- */
 :root {
-  --bg: #fafafa;
-  --bg-2: #f1f1f1;
+  --bg: #fbfbfa;
+  --bg-2: #f2f2f0;
   --surface: #ffffff;
-  --ink: #141414;
-  --muted: #5f5f63;
-  --line: #e4e4e7;
-  --gold: #b07f0a;
-  --gold-soft: #f0c94f;
-  --rose: #b64c7a;
-  --rose-soft: #e88fb0;
-  --teal: #1e7f7d;
-  --teal-soft: #7fd6d4;
-  --shadow: 0 1px 2px rgba(0,0,0,.05), 0 12px 32px -12px rgba(0,0,0,.14);
+  --ink: #16161a;
+  --muted: #5d5d66;
+  --line: #e5e5e2;
+  --accent: #b4235c;
+  --accent-ink: #ffffff;
+  --accent-soft: #fbe6ee;
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 10px 30px -14px rgba(0,0,0,.14);
   --radius: 14px;
   --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14202a;
-    --bg-2: #0f1920;
-    --surface: #1c2b36;
-    --ink: #f4ead9;
-    --muted: #b3a894;
-    --line: #2c3d49;
-    --gold: #f0c94f;
-    --gold-soft: #f0c94f;
-    --rose: #e88fb0;
-    --rose-soft: #e88fb0;
-    --teal: #7fd6d4;
-    --teal-soft: #7fd6d4;
+    --bg: #121316;
+    --bg-2: #0c0d0f;
+    --surface: #1a1b20;
+    --ink: #ededea;
+    --muted: #a2a2ab;
+    --line: #2a2b31;
+    --accent: #f08fb7;
+    --accent-ink: #16161a;
+    --accent-soft: #3a1c2a;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 14px 36px -14px rgba(0,0,0,.6);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #14202a;
-  --bg-2: #0f1920;
-  --surface: #1c2b36;
-  --ink: #f4ead9;
-  --muted: #b3a894;
-  --line: #2c3d49;
-  --gold: #f0c94f;
-  --gold-soft: #f0c94f;
-  --rose: #e88fb0;
-  --rose-soft: #e88fb0;
-  --teal: #7fd6d4;
-  --teal-soft: #7fd6d4;
+  --bg: #121316;
+  --bg-2: #0c0d0f;
+  --surface: #1a1b20;
+  --ink: #ededea;
+  --muted: #a2a2ab;
+  --line: #2a2b31;
+  --accent: #f08fb7;
+  --accent-ink: #16161a;
+  --accent-soft: #3a1c2a;
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 14px 36px -14px rgba(0,0,0,.6);
   color-scheme: dark;
 }
@@ -96,22 +87,22 @@ body {
   transition: background .3s, color .3s;
 }
 img, video { max-width: 100%; height: auto; display: block; }
-a { color: inherit; text-decoration-color: var(--gold); text-underline-offset: .18em; text-decoration-thickness: 1.5px; }
-a:hover { text-decoration-color: var(--rose); }
-:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
-h1, h2, h3 { font-family: var(--sans); font-weight: 700; line-height: 1.12; letter-spacing: -.025em; margin: 0; }
-h2 { font-size: clamp(1.9rem, 1.4rem + 2vw, 2.8rem); margin-bottom: .35em; }
-h3 { font-size: 1.3rem; font-weight: 700; }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: .18em; text-decoration-thickness: 1.5px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-weight: 700; line-height: 1.12; letter-spacing: -.025em; margin: 0; }
+h2 { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.6rem); margin-bottom: .35em; }
+h3 { font-size: 1.25rem; }
 p { margin: 0 0 1em; }
 ul { margin: 0; padding: 0; list-style: none; }
 .wrap { width: min(1120px, 100% - 2rem); margin-inline: auto; }
 .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--bg); padding: .5rem .8rem; border-radius: 8px; z-index: 2000; }
 .skip:focus { left: 8px; }
-.eyebrow { font-family: var(--sans); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
+.eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; }
 .muted { color: var(--muted); }
 section { padding: clamp(3rem, 4vw + 1rem, 5.5rem) 0; }
 section + section { border-top: 1px solid var(--line); }
-.section-head { max-width: 62ch; margin-bottom: 2.2rem; }
+.section-head { max-width: 64ch; margin-bottom: 2.2rem; }
 .section-head p { font-size: 1.1rem; color: var(--muted); }
 .ext::after { content: " ↗"; font-size: .85em; opacity: .7; }
 
@@ -123,8 +114,10 @@ section + section { border-top: 1px solid var(--line); }
   border-bottom: 1px solid var(--line);
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 60px; }
-.brand { font-weight: 700; font-size: 1.05rem; text-decoration: none; letter-spacing: -.01em; }
-.brand span { color: var(--gold); }
+.brand { font-weight: 700; font-size: 1.05rem; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+@media (max-width: 420px) { .brand { font-size: .92rem; } }
+.brand:hover { color: var(--ink); }
+.brand span { color: var(--accent); }
 .links { display: flex; gap: 1.4rem; align-items: center; }
 .links a { text-decoration: none; font-weight: 500; font-size: .95rem; color: var(--muted); }
 .links a:hover { color: var(--ink); }
@@ -152,51 +145,73 @@ section + section { border-top: 1px solid var(--line); }
 }
 
 /* ---------- Hero ---------- */
-.hero { padding: clamp(3rem, 6vw, 6rem) 0 clamp(2.5rem, 5vw, 4.5rem); overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.hero h1 { font-size: clamp(2.4rem, 1.8rem + 3vw, 4.2rem); font-weight: 800; letter-spacing: -.035em; }
-.hero h1 em { font-style: normal; color: var(--gold); }
-.lede { font-size: clamp(1.15rem, 1rem + .6vw, 1.4rem); line-height: 1.5; max-width: 34ch; margin: 1.4rem 0 1.2rem; }
-.tagline { font-size: 1.05rem; font-weight: 500; color: var(--muted); margin: 0 0 1.6rem; }
-.roles { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.8rem; }
-.roles li { font-size: .82rem; font-weight: 500; padding: .3rem .7rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); }
+.hero { padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(2.5rem, 5vw, 4.5rem); }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero h1 { font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.8rem); letter-spacing: -.035em; }
+.hero h1 span { color: var(--accent); }
+.lede { font-size: clamp(1.1rem, 1rem + .45vw, 1.3rem); line-height: 1.55; max-width: 40ch; margin: 1.3rem 0 .9rem; }
+.hero .also { color: var(--muted); max-width: 44ch; margin: 0 0 1.6rem; }
 .cta { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
 .btn {
   display: inline-flex; align-items: center; gap: .4rem; padding: .62rem 1.05rem; border-radius: 999px;
   text-decoration: none; font-weight: 600; font-size: .95rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
-  transition: transform .15s, border-color .15s, background .15s;
+  transition: transform .15s, border-color .15s, background .15s, color .15s;
 }
-.btn:hover { transform: translateY(-1px); border-color: var(--gold); }
+.btn:hover { transform: translateY(-1px); border-color: var(--accent); color: var(--ink); }
 .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.btn.primary:hover { background: var(--gold); border-color: var(--gold); color: #141414; }
-.portrait { position: relative; justify-self: center; width: min(100%, 460px); aspect-ratio: 1; }
-.portrait img { position: absolute; left: 0; bottom: 0; width: 76%; height: 76%; object-fit: cover; border-radius: 28px; box-shadow: var(--shadow); z-index: 1; }
-.hive { position: absolute; left: 10%; top: -22%; width: 120%; height: 120%; color: var(--ink); z-index: 0; opacity: .95; pointer-events: none; }
-.hive-curves path { stroke-dasharray: 700; stroke-dashoffset: 700; animation: draw 2.6s ease-out forwards; }
-.hive-curves path:nth-child(3n) { animation-delay: .3s; } .hive-curves path:nth-child(3n+1) { animation-delay: .7s; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
+.btn.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.portrait { justify-self: end; width: 100%; max-width: 520px; }
+.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); }
 @media (max-width: 860px) {
   .hero .wrap { grid-template-columns: 1fr; }
-  .portrait { width: min(100%, 340px); order: -1; }
+  .portrait { justify-self: start; max-width: 100%; order: -1; }
+  .portrait img { aspect-ratio: 4 / 3; object-position: 50% 20%; }
 }
 
-/* ---------- Work ---------- */
-.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-.card {
+/* ---------- Cards (shared) ---------- */
+.card, .talk, .vid {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
   display: flex; flex-direction: column; box-shadow: var(--shadow); transition: transform .2s, border-color .2s;
 }
-.card:hover { transform: translateY(-3px); border-color: var(--gold); }
-.card.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr 1fr; }
-.card .media { background: var(--bg-2); border-bottom: 1px solid var(--line); }
+.card:hover, .talk:hover { transform: translateY(-3px); border-color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: .3rem .8rem; }
+.tags span { font-size: .74rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+.meta { font-size: .88rem; color: var(--muted); margin: 0; }
+
+/* ---------- Speaking ---------- */
+.talks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+.talk .body { padding: 1.1rem 1.25rem 1.3rem; display: flex; flex-direction: column; gap: .4rem; }
+.talk h3 { font-size: 1.1rem; }
+.yt { position: relative; aspect-ratio: 16 / 9; background: #000; display: block; width: 100%; border: 0; padding: 0; cursor: pointer; overflow: hidden; }
+.yt img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+.yt .play { position: absolute; inset: 0; display: grid; place-items: center; }
+.yt .play span { width: 64px; height: 44px; border-radius: 12px; background: rgba(22,22,26,.85); display: grid; place-items: center; transition: background .15s; }
+.yt:hover .play span { background: var(--accent); }
+.yt .play svg { width: 22px; height: 22px; fill: #fff; margin-left: 3px; }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.talk .photos { display: grid; grid-template-columns: 1fr 1fr; aspect-ratio: 16 / 9; }
+.talk .photos.single { grid-template-columns: 1fr; }
+.talk .photos img { width: 100%; height: 100%; object-fit: cover; }
+.videos { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; align-items: start; }
+.vid video { width: 100%; background: #000; }
+.vid.wide video { aspect-ratio: 16 / 9; }
+.vid.tall video { aspect-ratio: 9 / 16; max-height: 560px; margin: 0 auto; }
+.vid .body { padding: 1rem 1.25rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; }
+.vid h3 { font-size: 1.05rem; }
+.strip { display: flex; gap: .8rem; overflow-x: auto; padding-bottom: .6rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.strip img { height: 190px; width: auto; border-radius: 10px; scroll-snap-align: start; flex: 0 0 auto; }
+@media (max-width: 900px) { .talks { grid-template-columns: 1fr; } .videos { grid-template-columns: 1fr; } .vid.tall video { max-height: 640px; } }
+
+/* ---------- Work ---------- */
+.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.card.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.05fr 1fr; }
+.card .media { background: var(--bg-2); border-bottom: 1px solid var(--line); display: block; }
 .card.feature .media { border-bottom: 0; border-right: 1px solid var(--line); }
 .card .media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; }
 .card.feature .media img { aspect-ratio: auto; min-height: 100%; }
 .card .body { padding: 1.4rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: .7rem; }
-.card .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-.card .tags span { font-size: .74rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--teal); }
-.card .tags span + span::before { content: "·"; margin-right: .4rem; color: var(--line); }
 .card p { margin: 0; color: var(--muted); }
+.card p strong { color: var(--ink); font-weight: 600; }
 .card .actions { display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin-top: auto; padding-top: .4rem; font-weight: 600; font-size: .95rem; }
 @media (max-width: 860px) {
   .work-grid { grid-template-columns: 1fr; }
@@ -212,7 +227,7 @@ section + section { border-top: 1px solid var(--line); }
 .pub li:last-child { border-bottom: 0; }
 .pub a { font-weight: 500; text-decoration: none; }
 .pub a:hover { text-decoration: underline; }
-.pub .meta { display: block; font-size: .86rem; color: var(--muted); margin-top: .15rem; }
+.pub .meta { display: block; margin-top: .15rem; }
 .pub.compact li { padding: .45rem 0; }
 details.more { margin-top: 1rem; }
 details.more summary { cursor: pointer; font-weight: 600; color: var(--muted); list-style: none; display: inline-flex; align-items: center; gap: .4rem; }
@@ -221,52 +236,19 @@ details.more summary::before { content: "+"; font-size: 1.2rem; line-height: 1; 
 details.more[open] summary::before { content: "–"; }
 @media (max-width: 760px) { .writing-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
-/* ---------- Speaking ---------- */
-.talks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
-.talk { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
-.talk .body { padding: 1.1rem 1.25rem 1.3rem; }
-.talk h3 { font-size: 1.15rem; margin-bottom: .3rem; }
-.talk .meta { font-size: .88rem; color: var(--muted); margin: 0; }
-.yt { position: relative; aspect-ratio: 16 / 9; background: #000; display: block; width: 100%; border: 0; padding: 0; cursor: pointer; overflow: hidden; }
-.yt img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
-.yt .play { position: absolute; inset: 0; display: grid; place-items: center; }
-.yt .play span { width: 64px; height: 44px; border-radius: 12px; background: rgba(27,22,17,.85); display: grid; place-items: center; transition: background .15s; }
-.yt:hover .play span { background: var(--rose); }
-.yt .play svg { width: 22px; height: 22px; fill: #fff; margin-left: 3px; }
-.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.talk .photos { display: grid; grid-template-columns: 1fr 1fr; aspect-ratio: 16 / 9; }
-.talk .photos.single { grid-template-columns: 1fr; }
-.talk .photos img { width: 100%; height: 100%; object-fit: cover; }
-.videos { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; align-items: start; }
-.vid { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.vid video { width: 100%; background: #000; }
-.vid.wide video { aspect-ratio: 16 / 9; }
-.vid.tall video { aspect-ratio: 9 / 16; max-height: 560px; margin: 0 auto; }
-.vid .body { padding: 1rem 1.25rem 1.2rem; }
-.vid h3 { font-size: 1.1rem; margin-bottom: .25rem; }
-.vid .meta { font-size: .88rem; color: var(--muted); }
-.strip { display: flex; gap: .8rem; overflow-x: auto; padding-bottom: .6rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-.strip img { height: 200px; width: auto; border-radius: 10px; scroll-snap-align: start; flex: 0 0 auto; }
-@media (max-width: 900px) { .talks { grid-template-columns: 1fr; } .videos { grid-template-columns: 1fr; } .vid.tall video { max-height: 640px; } }
-
 /* ---------- About ---------- */
 .about { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: start; }
 .about .bio { font-size: 1.1rem; }
-.about .bio p + p { margin-top: .2rem; }
+.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem 2rem; margin-top: 2.4rem; padding-top: 2.2rem; border-top: 1px solid var(--line); }
+.skills h3 { font-size: 1rem; margin-bottom: .3rem; }
+.skills p { color: var(--muted); margin: 0; font-size: .98rem; }
 .timeline { border-left: 2px solid var(--line); padding-left: 1.4rem; }
 .timeline li { position: relative; padding-bottom: 1.1rem; }
-.timeline li::before { content: ""; position: absolute; left: calc(-1.4rem - 6px); top: .5rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
-.timeline li:first-child::before { background: var(--rose); box-shadow: 0 0 0 4px color-mix(in srgb, var(--rose) 25%, transparent); }
-.timeline .when { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.timeline li::before { content: ""; position: absolute; left: calc(-1.4rem - 6px); top: .5rem; width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.timeline li:first-child::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.timeline .when { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .timeline .what { font-weight: 600; }
 .timeline .where { color: var(--muted); }
-.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem 2rem; margin-top: 2.8rem; padding-top: 2.4rem; border-top: 1px solid var(--line); }
-.skills h3 { font-size: 1.05rem; margin-bottom: .3rem; display: flex; align-items: center; gap: .5rem; }
-.skills h3::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
-.skills div:nth-child(2) h3::before { background: var(--rose); }
-.skills div:nth-child(3) h3::before { background: var(--teal); }
-.skills div:nth-child(4) h3::before { background: var(--ink); }
-.skills p { color: var(--muted); margin: 0; font-size: .98rem; }
 .edu { margin-top: 1.6rem; }
 .edu li { padding: .45rem 0; border-top: 1px dashed var(--line); }
 .edu li:first-child { border-top: 0; }
@@ -277,8 +259,7 @@ details.more[open] summary::before { content: "–"; }
 .contact { background: var(--bg-2); }
 .contact .inner { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
 .contact h2 { margin-bottom: .2em; }
-.contact .big { font-weight: 600; font-size: clamp(1.1rem, 1rem + 1vw, 1.5rem); text-decoration: none; border-bottom: 2px solid var(--gold); }
-.contact .big:hover { border-color: var(--rose); }
+.contact .big { font-weight: 600; font-size: clamp(1.1rem, 1rem + 1vw, 1.5rem); text-decoration: none; border-bottom: 2px solid var(--accent); }
 .contact .cta { justify-content: flex-end; }
 @media (max-width: 720px) { .contact .inner { grid-template-columns: 1fr; } .contact .cta { justify-content: flex-start; } }
 footer { padding: 1.6rem 0 2.2rem; font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); }
@@ -288,14 +269,15 @@ footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-<a class="skip" href="#work">Skip to content</a>
+<a class="skip" href="#speaking">Skip to content</a>
+
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">Kemi <span>Elizabeth</span> Ojogbede</a>
     <nav class="links" aria-label="Sections">
+      <a href="#speaking">Speaking</a>
       <a href="#work">Work</a>
       <a href="#writing">Writing</a>
-      <a href="#speaking">Speaking</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -303,9 +285,9 @@ footer a:hover { text-decoration: underline; }
       <details class="menu">
         <summary>Menu</summary>
         <ul>
+          <li><a href="#speaking">Speaking</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#writing">Writing</a></li>
-          <li><a href="#speaking">Speaking</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -324,19 +306,12 @@ footer a:hover { text-decoration: underline; }
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Technical Curriculum Developer, Neo4j GraphAcademy</p>
-      <h1 id="hero-title">I teach people how to <em>use</em> graphs, data and AI.</h1>
-      <p class="lede">Courses and blog posts at Neo4j, interactive graph visualisations on the side, and a decade of writing behind it: API documentation, developer advocacy, data journalism.</p>
-      <p class="tagline">Clarity is a product feature, not an afterthought.</p>
-      <ul class="roles" aria-label="What I do">
-        <li>Developer education</li>
-        <li>Developer advocacy</li>
-        <li>Data visualisation</li>
-        <li>Data journalism</li>
-        <li>AI tooling</li>
-      </ul>
+      <p class="eyebrow">Developer education · Developer advocacy · Technical writing</p>
+      <h1 id="hero-title">I make technical things <span>easier to learn</span>.</h1>
+      <p class="lede">I'm Kemi. I write courses and documentation, give talks, make videos, and build tools with AI to speed all of that up. Currently on the GraphAcademy team at Neo4j; before that, developer documentation and advocacy at Upsun and Amplience.</p>
+      <p class="also">I design in Figma and Photoshop and edit video in Final Cut Pro, DaVinci Resolve and Premiere Pro. I'll build anything I find interesting, and I like it most when other people find it interesting too, especially when it's riding a trend. Mostly, I like teaching people things.</p>
       <div class="cta">
-        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn primary" href="#speaking">See the work</a>
         <a class="btn" href="mailto:kemi.e.ojogbede@gmail.com">Email</a>
         <a class="btn" href="https://www.linkedin.com/in/kemi-elizabeth-ojogbede-629010156/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/Kemi-Elizabeth" target="_blank" rel="noopener">GitHub</a>
@@ -344,8 +319,84 @@ footer a:hover { text-decoration: underline; }
       </div>
     </div>
     <div class="portrait">
-      <svg class="hive" viewBox="0 0 600 600" aria-hidden="true" focusable="false"><line x1="300" y1="300" x2="300.0" y2="50.0" stroke="currentColor" stroke-opacity=".25" stroke-width="1.5"/><line x1="300" y1="300" x2="516.5" y2="425.0" stroke="currentColor" stroke-opacity=".25" stroke-width="1.5"/><line x1="300" y1="300" x2="83.5" y2="425.0" stroke="currentColor" stroke-opacity=".25" stroke-width="1.5"/><g class="hive-curves"><path d="M300.0 144.0 Q310.6 278.0 358.9 334.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 208.0 Q310.6 289.6 358.9 334.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 80.0 Q316.8 270.1 393.5 354.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 160.0 Q331.8 293.2 476.7 402.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 216.0 Q338.0 306.8 511.3 422.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 224.0 Q329.3 303.2 462.8 394.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 80.0 Q316.8 270.1 393.5 354.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 224.0 Q325.6 301.1 442.0 382.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M300.0 152.0 Q311.8 280.2 365.8 338.0" fill="none" stroke="var(--gold)" stroke-opacity=".55" stroke-width="1.2"/><path d="M511.3 422.0 Q326.2 328.8 234.2 338.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M358.9 334.0 Q292.5 316.6 199.5 358.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M504.4 418.0 Q298.8 343.2 88.7 422.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M476.7 402.0 Q301.2 336.0 130.3 398.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M504.4 418.0 Q303.7 340.3 116.4 406.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M469.7 398.0 Q305.0 332.4 158.0 382.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M442.0 382.0 Q312.5 322.3 227.3 342.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M442.0 382.0 Q313.7 321.6 234.2 338.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M462.8 394.0 Q291.3 338.9 88.7 422.0" fill="none" stroke="var(--rose)" stroke-opacity=".55" stroke-width="1.2"/><path d="M116.4 406.0 Q267.0 292.4 300.0 152.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M116.4 406.0 Q267.0 293.9 300.0 160.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M234.2 338.0 Q288.2 293.2 300.0 224.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M88.7 422.0 Q262.0 293.9 300.0 144.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M227.3 342.0 Q286.9 280.9 300.0 152.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M227.3 342.0 Q286.9 272.3 300.0 104.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M123.3 402.0 Q268.2 306.1 300.0 232.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M234.2 338.0 Q288.2 267.2 300.0 80.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/><path d="M130.3 398.0 Q269.4 291.0 300.0 152.0" fill="none" stroke="var(--teal)" stroke-opacity=".55" stroke-width="1.2"/></g><circle cx="300.0" cy="232.0" r="3.2" fill="var(--gold)"/><circle cx="300.0" cy="224.0" r="3.2" fill="var(--gold)"/><circle cx="300.0" cy="216.0" r="5" fill="var(--gold)"/><circle cx="300.0" cy="208.0" r="3.2" fill="var(--gold)"/><circle cx="300.0" cy="160.0" r="3.2" fill="var(--gold)"/><circle cx="300.0" cy="152.0" r="3.2" fill="var(--gold)"/><circle cx="300.0" cy="144.0" r="5" fill="var(--gold)"/><circle cx="300.0" cy="104.0" r="3.2" fill="var(--gold)"/><circle cx="300.0" cy="80.0" r="3.2" fill="var(--gold)"/><circle cx="358.9" cy="334.0" r="3.2" fill="var(--rose)"/><circle cx="365.8" cy="338.0" r="3.2" fill="var(--rose)"/><circle cx="393.5" cy="354.0" r="5" fill="var(--rose)"/><circle cx="442.0" cy="382.0" r="3.2" fill="var(--rose)"/><circle cx="462.8" cy="394.0" r="3.2" fill="var(--rose)"/><circle cx="469.7" cy="398.0" r="3.2" fill="var(--rose)"/><circle cx="476.7" cy="402.0" r="5" fill="var(--rose)"/><circle cx="504.4" cy="418.0" r="3.2" fill="var(--rose)"/><circle cx="511.3" cy="422.0" r="3.2" fill="var(--rose)"/><circle cx="241.1" cy="334.0" r="3.2" fill="var(--teal)"/><circle cx="234.2" cy="338.0" r="3.2" fill="var(--teal)"/><circle cx="227.3" cy="342.0" r="5" fill="var(--teal)"/><circle cx="199.5" cy="358.0" r="3.2" fill="var(--teal)"/><circle cx="158.0" cy="382.0" r="3.2" fill="var(--teal)"/><circle cx="130.3" cy="398.0" r="3.2" fill="var(--teal)"/><circle cx="123.3" cy="402.0" r="5" fill="var(--teal)"/><circle cx="116.4" cy="406.0" r="3.2" fill="var(--teal)"/><circle cx="88.7" cy="422.0" r="3.2" fill="var(--teal)"/></svg>
-      <img src="media/photos/portrait.webp" width="900" height="900" alt="Kemi Elizabeth Ojogbede speaking at SymfonyCon Amsterdam 2025" fetchpriority="high">
+      <img src="media/photos/hero.webp" width="1000" height="1250" alt="Kemi Elizabeth Ojogbede speaking on stage at SymfonyCon Amsterdam 2025" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEAKING ============ -->
+<section id="speaking" aria-labelledby="speaking-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Speaking and video</p>
+      <h2 id="speaking-title">Talks, meetups, camera.</h2>
+      <p>Conference talks, community meetups and short-form video. I've spoken at SymfonyCon two years running and stepped in at short notice when a slot needed filling.</p>
+    </div>
+
+    <div class="talks">
+      <article class="talk">
+        <a class="photos single" href="https://live.symfony.com/account/replay/video/1215" target="_blank" rel="noopener" aria-label="Watch the SymfonyCon Amsterdam 2025 replay (SymfonyConnect login)">
+          <img src="media/photos/symfonycon-amsterdam-2025.webp" width="1600" height="1067" alt="Kemi laughing at the podium at SymfonyCon Amsterdam 2025" loading="lazy">
+        </a>
+        <div class="body">
+          <h3>Code and Conscience: Ethical Docs for AI</h3>
+          <p class="meta">SymfonyCon Amsterdam · November 2025 · How to document AI features honestly: what they can do, what they can't, and where bias and privacy come in</p>
+          <p class="meta"><a class="ext" href="https://live.symfony.com/account/replay/video/1215" target="_blank" rel="noopener">Watch the replay</a> (free SymfonyConnect login)</p>
+        </div>
+      </article>
+
+      <article class="talk">
+        <button class="yt" type="button" data-id="_g0KQh5rdBo" aria-label="Play: The role of empathy in technical writing, SymfonyCon Vienna 2024">
+          <img src="https://i.ytimg.com/vi/_g0KQh5rdBo/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+        </button>
+        <div class="body">
+          <h3>The role of empathy in technical writing</h3>
+          <p class="meta">SymfonyCon Vienna · December 2024 · Why documentation that assumes the reader's situation is documentation that gets used</p>
+        </div>
+      </article>
+
+      <article class="talk">
+        <div class="photos">
+          <img src="media/talks/odyssey-talk-podium.webp" width="1152" height="1536" alt="Kemi at a podium presenting a slide titled Using d3.js and graph data to visualise The Odyssey" loading="lazy">
+          <img src="media/talks/odyssey-talk-slide.webp" width="1400" height="1091" alt="Kemi smiling in front of the title slide for her talk" loading="lazy">
+        </div>
+        <div class="body">
+          <h3>Using d3.js + graph data to visualise The Odyssey</h3>
+          <p class="meta">Neo4j meetup, London · 2026 · The data modelling decisions that made the visualisation easier to build</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="videos">
+      <article class="vid wide">
+        <video controls preload="none" poster="media/video/hive-plot-interview.jpg" playsinline>
+          <source src="media/video/hive-plot-interview.mp4" type="video/mp4">
+        </video>
+        <div class="body">
+          <h3>On camera: why I chose this layout</h3>
+          <p class="meta">Neo4j · 2026 · A short interview about the Odyssey visualisation and what a hive plot shows that the usual layout hides</p>
+        </div>
+      </article>
+      <article class="vid tall">
+        <video controls preload="none" poster="media/video/odyssey-graph-in-bloom.jpg" playsinline>
+          <source src="media/video/odyssey-graph-in-bloom.mp4" type="video/mp4">
+        </video>
+        <div class="body">
+          <h3>Two-minute walkthrough</h3>
+          <p class="meta">Neo4j · 2026 · Short-form video: querying and exploring the Odyssey data</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="strip" aria-label="Photos from SymfonyCon">
+      <img src="media/photos/symfonycon_8.webp" width="1400" height="933" alt="Kemi on stage at SymfonyCon Amsterdam 2025" loading="lazy">
+      <img src="media/photos/symfonycon_3.webp" width="1400" height="933" alt="Kemi presenting at SymfonyCon Vienna 2024" loading="lazy">
+      <img src="media/photos/symfonycon_6.webp" width="1400" height="933" alt="Kemi mid-talk at SymfonyCon Vienna" loading="lazy">
+      <img src="media/photos/symfonycon_10.webp" width="1400" height="933" alt="Kemi talking with attendees at SymfonyCon Amsterdam" loading="lazy">
+      <img src="media/photos/symfonycon_4.webp" width="1400" height="933" alt="Kemi speaking at SymfonyCon Vienna" loading="lazy">
+      <img src="media/photos/symfonycon_11.webp" width="1400" height="933" alt="Speakers on stage at SymfonyCon Amsterdam 2025" loading="lazy">
+      <img src="media/photos/symfonycon_9.webp" width="1400" height="933" alt="Kemi at the podium at SymfonyCon Amsterdam 2025" loading="lazy">
     </div>
   </div>
 </section>
@@ -355,24 +406,25 @@ footer a:hover { text-decoration: underline; }
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Selected work</p>
-      <h2 id="work-title">Graphs you can hover.</h2>
-      <p>Two interactive hive plots built from Neo4j data, the courses I write at GraphAcademy, and a couple of tools from my documentation years.</p>
+      <h2 id="work-title">Things I built.</h2>
+      <p>Two interactive visualisations, a feature on a learning platform, and two tools for documentation teams. Each one started as a question I wanted answered.</p>
     </div>
 
     <div class="work-grid">
       <article class="card feature">
-        <a class="media" href="https://kemi-elizabeth.github.io/odyssey_graph/" target="_blank" rel="noopener" aria-label="Open The Odyssey, on the hive">
-          <img src="media/work/odyssey-hive.webp" width="1400" height="720" alt="The Odyssey hive plot: characters, songs, places and actors on separate axes, joined by coloured curves" loading="lazy">
+        <a class="media" href="https://kemi-elizabeth.github.io/odyssey_graph/" target="_blank" rel="noopener" aria-label="Open the Odyssey visualisation">
+          <img src="media/work/odyssey-hive.webp" width="1400" height="720" alt="Interactive visualisation of The Odyssey: characters, songs, places and actors on separate axes, joined by coloured curves" loading="lazy">
         </a>
         <div class="body">
-          <div class="tags"><span>Neo4j</span><span>Cypher</span><span>d3.js</span><span>Knowledge graph</span></div>
-          <h3>The Odyssey, on the hive</h3>
-          <p>One story, three tellings. Homer's poem, <em>EPIC: The Musical</em> and Christopher Nolan's 2026 film, modelled as a Neo4j knowledge graph (130 nodes, 235 relationships) and drawn as an interactive hive plot in d3. Hover anything for the story behind it; turn on previews to hear the musical.</p>
-          <p>Building it surfaced a plot hole that weeks of reading the spreadsheet had missed. That became a piece for Nightingale, the Data Visualization Society's magazine.</p>
+          <div class="tags"><span>d3.js</span><span>JavaScript</span><span>Neo4j</span><span>Data modelling</span></div>
+          <h3>The Odyssey, three ways</h3>
+          <p><strong>What.</strong> An interactive visualisation of <em>The Odyssey</em> across three tellings: Homer's poem, <em>EPIC: The Musical</em> and Christopher Nolan's 2026 film. Hover any character, place, song or actor and it tells you the story behind it. Switch on previews and the songs play.</p>
+          <p><strong>How.</strong> I built the dataset by hand: 130 characters, places, songs and actors, and 235 relationships between them. I loaded it into a Neo4j database, then drew it with d3.js as a hive plot, a layout that gives each type of thing its own axis so the connections between them stay readable instead of collapsing into a hairball.</p>
+          <p><strong>Why.</strong> The film was coming out, the musical was everywhere, and I wanted to know whether the three versions actually tell the same story. They don't quite. Building it also exposed a missing connection that weeks of reading the data in a spreadsheet had hidden, which became a piece for Nightingale.</p>
           <div class="actions">
-            <a class="ext" href="https://kemi-elizabeth.github.io/odyssey_graph/" target="_blank" rel="noopener">Open the plot</a>
+            <a class="ext" href="https://kemi-elizabeth.github.io/odyssey_graph/" target="_blank" rel="noopener">Open it</a>
             <a class="ext" href="https://nightingaledvs.com/the-plot-hole-only-a-graph-could-find/" target="_blank" rel="noopener">Nightingale piece</a>
-            <a class="ext" href="https://graphacademy.neo4j.com/blog/odyssey-graph-database-neo4j" target="_blank" rel="noopener">Blog post</a>
+            <a class="ext" href="https://graphacademy.neo4j.com/blog/odyssey-graph-database-neo4j" target="_blank" rel="noopener">Write-up</a>
             <a class="ext" href="https://github.com/Kemi-Elizabeth/odyssey_graph" target="_blank" rel="noopener">Data and code</a>
           </div>
         </div>
@@ -383,11 +435,13 @@ footer a:hover { text-decoration: underline; }
           <img src="media/work/beyhive-plot.webp" width="1400" height="720" alt="The BeyHive Plot: Beyoncé's albums as cover art on one axis, songs by era on another, tours and collaborators on the others" loading="lazy">
         </a>
         <div class="body">
-          <div class="tags"><span>d3.js</span><span>iTunes API</span><span>Wikipedia API</span></div>
+          <div class="tags"><span>d3.js</span><span>JavaScript</span><span>iTunes API</span><span>Wikipedia API</span></div>
           <h3>The BeyHive Plot</h3>
-          <p>Beyoncé's solo discography as a hive plot. Eight albums wearing their own cover art, 100+ songs coloured by era, all seven tours, and every credited collaborator with a live Wikipedia bio. Toggle previews, hover a song, and it plays.</p>
+          <p><strong>What.</strong> Beyoncé's solo discography as one interactive picture: eight albums wearing their own cover art, over 100 songs coloured by era, all seven tours, and every credited collaborator with a live Wikipedia bio. Toggle previews, hover a song, and it plays.</p>
+          <p><strong>How.</strong> No database this time. The structure (albums, tours, era facts) is hand-curated in the file, and everything else arrives live when the page loads: tracklists, artwork and 30-second previews from the iTunes Search API, collaborator photos and bios from Wikipedia's API.</p>
+          <p><strong>Why.</strong> Once I'd worked out the layout on <em>The Odyssey</em>, I wanted to try it on a dataset people would actually argue about.</p>
           <div class="actions">
-            <a class="ext" href="https://kemi-elizabeth.github.io/beyhive_plot/" target="_blank" rel="noopener">Open the plot</a>
+            <a class="ext" href="https://kemi-elizabeth.github.io/beyhive_plot/" target="_blank" rel="noopener">Open it</a>
             <a class="ext" href="https://github.com/Kemi-Elizabeth/beyhive_plot" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
@@ -395,27 +449,30 @@ footer a:hover { text-decoration: underline; }
 
       <article class="card">
         <a class="media" href="https://graphacademy.neo4j.com/" target="_blank" rel="noopener" aria-label="Open Neo4j GraphAcademy">
-          <img src="media/work/graphacademy-bloom.webp" width="1400" height="875" alt="The Odyssey graph explored in Neo4j Bloom: Odysseus at the centre, songs, places and characters around him" loading="lazy">
+          <img src="media/work/graphacademy-notes.webp" width="1400" height="788" alt="A lesson page on GraphAcademy with a sentence highlighted and a note being added to it" loading="lazy">
         </a>
         <div class="body">
-          <div class="tags"><span>Neo4j GraphAcademy</span><span>Curriculum</span><span>Video</span></div>
-          <h3>Free courses at GraphAcademy</h3>
-          <p>At Neo4j I write, edit and film GraphAcademy courses on Cypher, Aura, importing data and graph visualisation, and I work on the learning platform itself. The rule I write to: assume no prior knowledge, define jargon the first time or cut it, and get the learner to something that works within minutes.</p>
+          <div class="tags"><span>React</span><span>TypeScript</span><span>Product</span></div>
+          <h3>Notes and highlights for GraphAcademy</h3>
+          <p><strong>What.</strong> A note-taking feature on Neo4j's free learning platform. Select any text or image in a lesson, highlight it, add a note, and everything you save collects on a "Your notes" page at the end of the course.</p>
+          <p><strong>How.</strong> I built it in React and TypeScript inside the platform's codebase. The hard parts were anchoring a highlight to text that can change between site rebuilds, and making a save feel instant even when the network isn't.</p>
+          <p><strong>Why.</strong> I wanted learners to be able to keep what they'd found useful without leaving the lesson to do it.</p>
           <div class="actions">
             <a class="ext" href="https://graphacademy.neo4j.com/" target="_blank" rel="noopener">GraphAcademy</a>
-            <a href="#writing">My GraphAcademy posts</a>
           </div>
         </div>
       </article>
 
       <article class="card">
-        <a class="media" href="https://github.com/Kemi-Elizabeth/AI-DocReviewer" target="_blank" rel="noopener" aria-label="AI Doc Reviewer on GitHub">
+        <a class="media" href="https://github.com/Kemi-Elizabeth/AI-DocReviewer" target="_blank" rel="noopener" aria-label="Empathometer on GitHub">
           <img src="media/work/ai-doc-reviewer.webp" width="1400" height="1038" alt="The Empathometer interface reviewing a documentation page from the perspective of an AI agent persona" loading="lazy">
         </a>
         <div class="body">
           <div class="tags"><span>Python</span><span>FastAPI</span><span>OpenAI API</span></div>
-          <h3>AI Doc Reviewer</h3>
-          <p>A documentation review tool that reads a page the way five different readers would (junior developer, business user, senior developer, AI agent) and says where each one would get stuck. Built to turn "is this clear?" into something a docs team can act on.</p>
+          <h3>Empathometer</h3>
+          <p><strong>What.</strong> A documentation review tool that reads a page the way different readers would: a junior developer, a business user, a senior developer, an AI agent. Paste in a page, pick a persona, and it tells you where that reader would get stuck and what to change.</p>
+          <p><strong>How.</strong> Python and FastAPI on the back end, plain HTML, CSS and JavaScript on the front, with the OpenAI API doing the reading. Each persona is a prompt with a point of view, not a checklist.</p>
+          <p><strong>Why.</strong> "Is this clear?" is the question every docs team asks, and nobody can answer it for a reader they aren't.</p>
           <div class="actions">
             <a class="ext" href="https://github.com/Kemi-Elizabeth/AI-DocReviewer" target="_blank" rel="noopener">Code</a>
           </div>
@@ -423,13 +480,15 @@ footer a:hover { text-decoration: underline; }
       </article>
 
       <article class="card">
-        <a class="media" href="https://github.com/Kemi-Elizabeth/tweet-generator-app" target="_blank" rel="noopener" aria-label="Blog to social post generator on GitHub">
+        <a class="media" href="https://github.com/Kemi-Elizabeth/tweet-generator-app" target="_blank" rel="noopener" aria-label="uptweet on GitHub">
           <img src="media/work/uptweet.webp" width="1980" height="1114" alt="The uptweet app: a blog URL pasted in, and a generated social post underneath" loading="lazy">
         </a>
         <div class="body">
           <div class="tags"><span>Python</span><span>Flask</span><span>LLMs</span></div>
-          <h3>Blog to social post generator</h3>
-          <p>A Flask app that turns long-form developer posts into short social copy and shows its reasoning as it goes. Built at Upsun so one blog post could become a week of posts without anyone rewriting it by hand.</p>
+          <h3>uptweet</h3>
+          <p><strong>What.</strong> A small web app that takes a long developer blog post and turns it into short social posts, showing the reasoning it used so you can correct it rather than just accept it.</p>
+          <p><strong>How.</strong> Python and Flask, with an LLM doing the first draft and a person keeping the voice.</p>
+          <p><strong>Why.</strong> Built at Upsun, where one blog post a week needed to become several posts, and rewriting them by hand was the part nobody had time for.</p>
           <div class="actions">
             <a class="ext" href="https://github.com/Kemi-Elizabeth/tweet-generator-app" target="_blank" rel="noopener">Code</a>
           </div>
@@ -444,146 +503,72 @@ footer a:hover { text-decoration: underline; }
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Writing</p>
-      <h2 id="writing-title">Explained, not just documented.</h2>
-      <p>Recent pieces on graphs and data, then a selection from ten years of technical writing, research and journalism.</p>
+      <h2 id="writing-title">Published work.</h2>
+      <p>Recent pieces first, then a selection of the developer documentation I've written and led.</p>
     </div>
 
     <div class="writing-grid">
       <div class="writing-group">
-        <h3>Graphs, data and AI</h3>
+        <h3>Data and AI</h3>
         <ul class="pub">
           <li>
-            <a class="ext" href="https://graphacademy.neo4j.com/blog/neo4j-graph-to-interactive-hive-plot" target="_blank" rel="noopener">From Neo4j Graph to Interactive Hive Plot: Modeling Graph Data for d3.js</a>
-            <span class="meta">GraphAcademy blog · September 2026 · The four modelling decisions behind an interactive d3 hive plot</span>
+            <a class="ext" href="https://graphacademy.neo4j.com/blog/neo4j-graph-to-interactive-hive-plot" target="_blank" rel="noopener">From Database to Interactive Visualisation: Modelling Data for d3.js</a>
+            <span class="meta">GraphAcademy blog · September 2026 · The four modelling decisions that made the Odyssey visualisation possible</span>
           </li>
           <li>
             <a class="ext" href="https://nightingaledvs.com/the-plot-hole-only-a-graph-could-find/" target="_blank" rel="noopener">The Plot Hole Only a Graph Could Find</a>
-            <span class="meta">Nightingale, Data Visualization Society · August 2026 · Some data errors are invisible until you stop reading and start looking</span>
+            <span class="meta">Nightingale, the Data Visualization Society's magazine · August 2026 · Some data errors are invisible until you stop reading and start looking</span>
           </li>
           <li>
-            <a class="ext" href="https://graphacademy.neo4j.com/blog/list-comprehension-for-lost-data" target="_blank" rel="noopener">Writing Cypher Queries That Don't Lose Your Data</a>
+            <a class="ext" href="https://graphacademy.neo4j.com/blog/list-comprehension-for-lost-data" target="_blank" rel="noopener">Writing Queries That Don't Lose Your Data</a>
             <span class="meta">GraphAcademy blog · July 2026 · The query trap that hides your newest data, and the shape that brings it back</span>
           </li>
           <li>
-            <a class="ext" href="https://graphacademy.neo4j.com/blog/odyssey-graph-database-neo4j" target="_blank" rel="noopener">EPIC: The Musical vs Nolan's The Odyssey: One Story, Visualised as a Graph</a>
-            <span class="meta">GraphAcademy blog · July 2026 · Every plot thread and character of Homer's poem in a graph database</span>
+            <a class="ext" href="https://graphacademy.neo4j.com/blog/odyssey-graph-database-neo4j" target="_blank" rel="noopener">EPIC: The Musical vs Nolan's The Odyssey: One Story, Visualised</a>
+            <span class="meta">GraphAcademy blog · July 2026 · Every plot thread and character of Homer's poem, mapped and compared</span>
           </li>
-        </ul>
-
-        <h3 style="margin-top:2.2rem">Data journalism and research</h3>
-        <ul class="pub compact">
-          <li><a class="ext" href="https://www.finder.com/uk/pensions/pension-statistics" target="_blank" rel="noopener">Pension statistics</a> <span class="meta">Finder UK · research page with interactive data</span></li>
-          <li><a class="ext" href="https://www.finder.com/uk/savings-accounts/millionaire-calculator" target="_blank" rel="noopener">Millionaire calculator</a> <span class="meta">Finder UK · interactive calculator built in Twig, PHP and JavaScript</span></li>
-          <li><a class="ext" href="https://public.tableau.com/app/profile/kemi.ojogbede/viz/Pollution_15932697421580/Story1" target="_blank" rel="noopener">Pollution analysis</a> <span class="meta">Tableau Public · data story</span></li>
-          <li><a class="ext" href="https://www.finder.com/uk/author/kemiojogbede" target="_blank" rel="noopener">More research at Finder UK</a> <span class="meta">author page</span></li>
+          <li>
+            <a class="ext" href="https://www.finder.com/uk/pensions/pension-statistics" target="_blank" rel="noopener">Pension statistics: what is the average pension pot in the UK?</a>
+            <span class="meta">Finder UK · Data journalism · Research page with interactive charts</span>
+          </li>
+          <li>
+            <a class="ext" href="https://www.finder.com/uk/savings-accounts/millionaire-calculator" target="_blank" rel="noopener">Millionaire calculator</a>
+            <span class="meta">Finder UK · Interactive tool built in Twig, PHP and JavaScript</span>
+          </li>
+          <li>
+            <a class="ext" href="https://public.tableau.com/app/profile/kemi.ojogbede/viz/Pollution_15932697421580/Story1" target="_blank" rel="noopener">Pollution analysis</a>
+            <span class="meta">Tableau Public · Data story</span>
+          </li>
         </ul>
       </div>
 
       <div class="writing-group">
-        <h3>Developer documentation</h3>
+        <h3>Documentation</h3>
         <ul class="pub compact">
           <li><a class="ext" href="https://amplience.com/developers/docs/apis/content-delivery-graphql/overview/" target="_blank" rel="noopener">GraphQL Content Delivery overview</a> <span class="meta">Amplience · API documentation</span></li>
           <li><a class="ext" href="https://amplience.com/developers/docs/apis/asset-management/" target="_blank" rel="noopener">Asset Management API</a> <span class="meta">Amplience · REST reference</span></li>
-          <li><a class="ext" href="https://amplience.com/developers/docs/dev-tools/integrations-and-extensions/webhook-guides/" target="_blank" rel="noopener">Webhook guides</a> <span class="meta">Amplience · integration guides</span></li>
-          <li><a class="ext" href="https://amplience.com/developers/docs/dev-tools/cli-tool/" target="_blank" rel="noopener">CLI tool</a> <span class="meta">Amplience · developer tooling</span></li>
-          <li><a class="ext" href="https://developer.upsun.com/docs/get-started/ai/using-the-mcp" target="_blank" rel="noopener">Using the MCP AI tools</a> <span class="meta">Upsun · getting started</span></li>
-          <li><a class="ext" href="https://developer.upsun.com/docs/core-concepts/build-deploy" target="_blank" rel="noopener">Zero-downtime deployments</a> <span class="meta">Upsun · concept guide</span></li>
-          <li><a class="ext" href="https://developer.upsun.com/docs/languages/php/frankenphp" target="_blank" rel="noopener">FrankenPHP</a> <span class="meta">Upsun · language guide</span></li>
-          <li><a class="ext" href="https://developer.upsun.com/docs/troubleshooting/502-errors" target="_blank" rel="noopener">Troubleshooting 502 errors</a> <span class="meta">Upsun · troubleshooting</span></li>
-          <li><a class="ext" href="https://developer.upsun.com/posts/tutorials/deploying-with-lisp/" target="_blank" rel="noopener">Up(sun) and running with Lisp</a> <span class="meta">Upsun Developer Center · tutorial</span></li>
+          <li><a class="ext" href="https://amplience.com/developers/docs/dev-tools/integrations-and-extensions/webhook-guides/" target="_blank" rel="noopener">Webhook guides</a> <span class="meta">Amplience · Integration guides</span></li>
+          <li><a class="ext" href="https://amplience.com/developers/docs/dev-tools/cli-tool/" target="_blank" rel="noopener">CLI tool</a> <span class="meta">Amplience · Developer tooling</span></li>
+          <li><a class="ext" href="https://developer.upsun.com/docs/get-started/ai/using-the-mcp" target="_blank" rel="noopener">The Upsun MCP server</a> <span class="meta">Upsun · Getting started with AI tools</span></li>
+          <li><a class="ext" href="https://developer.upsun.com/docs/core-concepts/build-deploy" target="_blank" rel="noopener">Build and deploy, including zero-downtime deployments</a> <span class="meta">Upsun · Concept guide</span></li>
+          <li><a class="ext" href="https://developer.upsun.com/docs/languages/php/frankenphp" target="_blank" rel="noopener">FrankenPHP</a> <span class="meta">Upsun · Language guide</span></li>
+          <li><a class="ext" href="https://developer.upsun.com/docs/troubleshooting/502-errors" target="_blank" rel="noopener">Troubleshooting 502 errors</a> <span class="meta">Upsun · Troubleshooting</span></li>
+          <li><a class="ext" href="https://developer.upsun.com/posts/tutorials/deploying-with-lisp/" target="_blank" rel="noopener">Up(sun) and running with Lisp</a> <span class="meta">Upsun Developer Center · Tutorial</span></li>
         </ul>
-        <p class="muted" style="font-size:.9rem; margin-top:.8rem">A selection. I led the Upsun documentation through a brand merge and a replatform to Mintlify, and owned REST and GraphQL API docs at Amplience.</p>
+        <p class="muted" style="font-size:.9rem; margin-top:.8rem">A selection. At Upsun I led the documentation through the Platform.sh brand merge and a replatform to Mintlify; at Amplience I owned the REST and GraphQL API docs.</p>
 
         <details class="more">
           <summary>Earlier journalism, 2016 to 2018</summary>
           <ul class="pub compact" style="margin-top:.6rem">
             <li><a class="ext" href="https://theweek.com/80515/moonlight-can-barry-jenkinss-coming-of-age-tale-secure-an-oscar" target="_blank" rel="noopener">Moonlight: can Barry Jenkins's coming-of-age tale secure an Oscar?</a> <span class="meta">The Week</span></li>
-            <li><a class="ext" href="https://www.3dsourced.com/feature-stories/future-3d-printed-clothing/" target="_blank" rel="noopener">The future of 3D-printed clothing</a> <span class="meta">3DSourced</span></li>
-            <li><a class="ext" href="https://theweek.com/81701/genius-behind-the-gems-meet-julien-riad-sahyoun" target="_blank" rel="noopener">The genius behind the gems: meet Julien Riad Sahyoun</a> <span class="meta">The Week</span></li>
-            <li><a class="ext" href="https://www.mirror.co.uk/interactives/thanos-pennywise-six-unlikely-film-12468665" target="_blank" rel="noopener">Thanos, Pennywise and six unlikely film villains</a> <span class="meta">The Mirror · interactive</span></li>
+            <li><a class="ext" href="https://www.3dsourced.com/feature-stories/future-3d-printed-clothing/" target="_blank" rel="noopener">The inescapable rise of 3D-printed clothing</a> <span class="meta">3DSourced</span></li>
+            <li><a class="ext" href="https://theweek.com/81701/genius-behind-the-gems-meet-julien-riad-sahyoun" target="_blank" rel="noopener">Genius behind the gems: meet Julien Riad Sahyoun</a> <span class="meta">The Week</span></li>
+            <li><a class="ext" href="https://www.mirror.co.uk/interactives/thanos-pennywise-six-unlikely-film-12468665" target="_blank" rel="noopener">Thanos, Pennywise and six unlikely film villains</a> <span class="meta">The Mirror · Interactive</span></li>
             <li><a class="ext" href="https://theweek.com/76185/how-to-see-the-worlds-most-impressive-natural-phenomena-in-style" target="_blank" rel="noopener">How to see the world's most impressive natural phenomena in style</a> <span class="meta">The Week</span></li>
             <li><a class="ext" href="https://www.mirror.co.uk/film/horror-films-killer-animal-attacks-13045677" target="_blank" rel="noopener">Horror films with killer animal attacks</a> <span class="meta">The Mirror</span></li>
           </ul>
         </details>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SPEAKING ============ -->
-<section id="speaking" aria-labelledby="speaking-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Speaking and video</p>
-      <h2 id="speaking-title">Talks, meetups, camera.</h2>
-      <p>Conference talks on documentation and AI ethics, a meetup on graph visualisation, and short videos for Neo4j.</p>
-    </div>
-
-    <div class="talks">
-      <article class="talk">
-        <div class="photos">
-          <img src="media/talks/odyssey-talk-podium.webp" width="1152" height="1536" alt="Kemi at a podium presenting a slide titled Using d3.js and graph data to visualise The Odyssey" loading="lazy">
-          <img src="media/talks/odyssey-talk-slide.webp" width="1400" height="1091" alt="Kemi smiling in front of the title slide for her talk" loading="lazy">
-        </div>
-        <div class="body">
-          <h3>Using d3.js + graph data to visualise The Odyssey</h3>
-          <p class="meta">Neo4j meetup, London · 2026 · The data modelling decisions that made d3.js easier to use</p>
-        </div>
-      </article>
-
-      <article class="talk">
-        <a class="photos single" href="https://live.symfony.com/account/replay/video/1215" target="_blank" rel="noopener" aria-label="Watch the SymfonyCon Amsterdam 2025 replay (SymfonyConnect login)">
-          <img src="media/photos/symfonycon-amsterdam-2025.webp" width="1600" height="1067" alt="Kemi laughing at the podium at SymfonyCon Amsterdam 2025" loading="lazy">
-        </a>
-        <div class="body">
-          <h3>Code and Conscience: Ethical Docs for AI</h3>
-          <p class="meta">SymfonyCon Amsterdam · November 2025 · How technical writers build trust in AI features: capabilities, limits, bias and privacy, documented plainly</p>
-          <p class="meta" style="margin-top:.5rem"><a class="ext" href="https://live.symfony.com/account/replay/video/1215" target="_blank" rel="noopener">Watch the replay</a> (free SymfonyConnect login)</p>
-        </div>
-      </article>
-
-      <article class="talk">
-        <button class="yt" type="button" data-id="_g0KQh5rdBo" aria-label="Play: The role of empathy in technical writing, SymfonyCon Vienna 2024">
-          <img src="https://i.ytimg.com/vi/_g0KQh5rdBo/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
-          <span class="play"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
-        </button>
-        <div class="body">
-          <h3>The role of empathy in technical writing</h3>
-          <p class="meta">SymfonyCon Vienna · December 2024 · Why documentation that assumes the reader's context is documentation that gets used</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="videos">
-      <article class="vid wide">
-        <video controls preload="none" poster="media/video/hive-plot-interview.jpg" playsinline>
-          <source src="media/video/hive-plot-interview.mp4" type="video/mp4">
-        </video>
-        <div class="body">
-          <h3>Why a hive plot?</h3>
-          <p class="meta">Neo4j · 2026 · On what a hive plot shows that a force-directed layout hides</p>
-        </div>
-      </article>
-      <article class="vid tall">
-        <video controls preload="none" poster="media/video/odyssey-graph-in-bloom.jpg" playsinline>
-          <source src="media/video/odyssey-graph-in-bloom.mp4" type="video/mp4">
-        </video>
-        <div class="body">
-          <h3>Querying The Odyssey graph</h3>
-          <p class="meta">Neo4j · 2026 · Cypher, then Bloom, in two minutes</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="strip" aria-label="Photos from SymfonyCon">
-      <img src="media/photos/symfonycon_8.webp" width="1400" height="933" alt="Kemi on stage at SymfonyCon Vienna 2024" loading="lazy">
-      <img src="media/photos/symfonycon_3.webp" width="1400" height="933" alt="Kemi presenting at SymfonyCon" loading="lazy">
-      <img src="media/photos/symfonycon-amsterdam-2025.webp" width="1600" height="1067" alt="Kemi laughing at the podium at SymfonyCon Amsterdam 2025" loading="lazy">
-      <img src="media/photos/symfonycon_6.webp" width="1400" height="933" alt="Kemi mid-talk at SymfonyCon" loading="lazy">
-      <img src="media/photos/symfonycon_10.webp" width="1400" height="933" alt="Audience view of Kemi's SymfonyCon talk" loading="lazy">
-      <img src="media/photos/symfonycon_4.webp" width="1400" height="933" alt="Kemi speaking at SymfonyCon" loading="lazy">
-      <img src="media/photos/symfonycon_11.webp" width="1400" height="933" alt="Kemi at SymfonyCon" loading="lazy">
-      <img src="media/photos/symfonycon_9.webp" width="1400" height="933" alt="Kemi at the podium at SymfonyCon Amsterdam 2025" loading="lazy">
     </div>
   </div>
 </section>
@@ -597,26 +582,25 @@ footer a:hover { text-decoration: underline; }
     </div>
     <div class="about">
       <div class="bio">
-        <p>I came to developer education through journalism, content, data and documentation, in that order. National newspapers first (The Mirror, The Week), then content and data work at Mumsnet and Finder, a stint as a data visualisation engineer at a media agency, and four years writing API documentation and doing developer advocacy at Amplience and Upsun.</p>
-        <p>In June 2026 I joined Neo4j's GraphAcademy team as a Technical Curriculum Developer. I write and film courses, contribute to the learning platform, and spend my evenings turning things I like (Homer, Beyoncé) into graphs.</p>
-        <p>Two Master's degrees, one in Data Science and one in Contemporary Literature, which explains the Odyssey. Based just outside London.</p>
+        <p>I came to developer education through journalism, content, data and documentation, in that order. National newspapers first, then content and data work at Mumsnet and Finder, a stint as a data visualisation engineer at a media agency, and four years writing API documentation and doing developer advocacy at Amplience and Upsun.</p>
+        <p>At Neo4j I write and film courses for GraphAcademy, build features on the learning platform, and co-host a women in tech meetup at the London office. I have two Master's degrees, one in Data Science and one in Contemporary Literature, which is why the projects above are about Homer and Beyoncé rather than sales data. Based just outside London.</p>
 
         <div class="skills">
           <div>
-            <h3>Graphs and data</h3>
-            <p>Neo4j, Cypher, Aura, graph data modelling, d3.js, Python (pandas, Flask, FastAPI), SQL, Tableau</p>
+            <h3>Education and writing</h3>
+            <p>Curriculum design, course scripting and filming, docs-as-code, API reference, style guides, information architecture</p>
+          </div>
+          <div>
+            <h3>Code and data</h3>
+            <p>Python (Flask, FastAPI, pandas), JavaScript, React and TypeScript, d3.js, SQL, Cypher and Neo4j, Tableau</p>
           </div>
           <div>
             <h3>AI</h3>
-            <p>LLM pipelines, RAG and GraphRAG, MCP, LangChain, prompt engineering, Claude and OpenAI APIs</p>
+            <p>LLM pipelines, RAG, MCP, LangChain, prompt design, Claude and OpenAI APIs, AI-assisted coding</p>
           </div>
           <div>
-            <h3>Documentation and education</h3>
-            <p>Docs-as-code, API reference, curriculum design, video scripting, Mintlify, Hugo, Docusaurus, Markdown and MDX</p>
-          </div>
-          <div>
-            <h3>Advocacy</h3>
-            <p>Conference talks, meetups, blog posts, short-form video, developer community</p>
+            <h3>Design and video</h3>
+            <p>Figma, Photoshop, Final Cut Pro, DaVinci Resolve, Premiere Pro, Screen Studio</p>
           </div>
         </div>
       </div>
@@ -662,7 +646,7 @@ footer a:hover { text-decoration: underline; }
 <footer>
   <div class="wrap">
     <span>© <span id="year">2026</span> Kemi Elizabeth Ojogbede</span>
-    <span><a href="https://kemi-elizabeth.github.io/odyssey_graph/">Odyssey plot</a> · <a href="https://kemi-elizabeth.github.io/beyhive_plot/">BeyHive plot</a> · <a href="https://github.com/Kemi-Elizabeth/kemi-elizabeth.github.io">Source</a></span>
+    <span><a href="https://github.com/Kemi-Elizabeth/kemi-elizabeth.github.io">Source</a></span>
   </div>
 </footer>
 
@@ -703,6 +687,5 @@ footer a:hover { text-decoration: underline; }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
