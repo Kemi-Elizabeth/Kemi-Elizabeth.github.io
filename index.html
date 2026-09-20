@@ -275,15 +275,12 @@ details.more[open] summary::before { content: "–"; }
 
 /* ---------- Featured writing ---------- */
 .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
-.feat { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1.5rem 1.6rem 1.6rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .7rem; transition: transform .2s; }
-.feat:hover { transform: translateY(-3px); }
-.feat .where { font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
-.feat h3 { font-size: 1.35rem; line-height: 1.2; }
+.feat .media img { aspect-ratio: 16 / 9; }
+.feat .body { padding: 1.25rem 1.4rem 1.4rem; gap: .5rem; }
+.feat .where { font-size: .76rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.feat h3 { font-size: 1.2rem; line-height: 1.25; }
 .feat h3 a { text-decoration: none; }
 .feat h3 a:hover { text-decoration: underline; }
-.feat p { margin: 0; color: var(--muted); }
-.feat blockquote { margin: .2rem 0 0; padding: .6rem 0 0; border-top: 1px dashed var(--line); font-size: 1rem; color: var(--ink); font-style: italic; }
-.feat .actions { margin-top: auto; padding-top: .4rem; font-weight: 600; font-size: .95rem; }
 @media (max-width: 760px) { .featured { grid-template-columns: 1fr; } }
 
 /* ---------- About ---------- */
@@ -593,18 +590,25 @@ footer a:hover { text-decoration: underline; }
     </div>
 
     <div class="featured">
-      <article class="feat">
-        <span class="where">Nightingale · Data Visualization Society · August 2026</span>
-        <h3><a class="ext" href="https://nightingaledvs.com/the-plot-hole-only-a-graph-could-find/" target="_blank" rel="noopener">The Plot Hole Only a Graph Could Find</a></h3>
-        <p>My first piece for a publication outside the companies I've worked for. I mapped <em>The Odyssey</em> and its two newest adaptations as a network and found a missing connection that weeks of reading the same data in a spreadsheet had hidden. The argument is that some errors live between the rows, and only a picture of the connections shows them.</p>
-        <blockquote>"The error existed between the rows, and a table had no way of directly showing me that."</blockquote>
-        <div class="actions"><a class="ext" href="https://nightingaledvs.com/the-plot-hole-only-a-graph-could-find/" target="_blank" rel="noopener">Read it</a></div>
+      <article class="card feat">
+        <a class="media" href="https://nightingaledvs.com/the-plot-hole-only-a-graph-could-find/" target="_blank" rel="noopener" aria-label="Read The Plot Hole Only a Graph Could Find on Nightingale">
+          <img src="media/work/nightingale-plot-hole.webp" width="1400" height="788" alt="The article on Nightingale: masthead, headline and byline" loading="lazy">
+        </a>
+        <div class="body">
+          <span class="where">Nightingale · Data Visualization Society · August 2026</span>
+          <h3><a class="ext" href="https://nightingaledvs.com/the-plot-hole-only-a-graph-could-find/" target="_blank" rel="noopener">The Plot Hole Only a Graph Could Find</a></h3>
+          <p>I mapped <em>The Odyssey</em> and its two newest adaptations as a network and found a missing connection that weeks of reading the same data in a spreadsheet had hidden.</p>
+        </div>
       </article>
-      <article class="feat">
-        <span class="where">GraphAcademy blog · September 2026</span>
-        <h3><a class="ext" href="https://graphacademy.neo4j.com/blog/neo4j-graph-to-interactive-hive-plot" target="_blank" rel="noopener">From Database to Interactive Visualisation: Modelling Data for d3.js</a></h3>
-        <p>The full write-up of how the Odyssey visualisation was built: the four data modelling decisions that made it possible to go from a database to an interactive d3.js hive plot, with the wrong turns left in, because they're the useful part. It's the piece I'd hand someone who wants to build their own.</p>
-        <div class="actions"><a class="ext" href="https://graphacademy.neo4j.com/blog/neo4j-graph-to-interactive-hive-plot" target="_blank" rel="noopener">Read it</a></div>
+      <article class="card feat">
+        <a class="media" href="https://graphacademy.neo4j.com/blog/neo4j-graph-to-interactive-hive-plot" target="_blank" rel="noopener" aria-label="Read From Neo4j Graph to Interactive Hive Plot on the GraphAcademy blog">
+          <img src="media/work/graphacademy-d3-post.webp" width="1400" height="788" alt="The article's header card on the GraphAcademy blog: title, byline and date" loading="lazy">
+        </a>
+        <div class="body">
+          <span class="where">GraphAcademy blog · September 2026</span>
+          <h3><a class="ext" href="https://graphacademy.neo4j.com/blog/neo4j-graph-to-interactive-hive-plot" target="_blank" rel="noopener">From Database to Interactive Visualisation: Modelling Data for d3.js</a></h3>
+          <p>The full write-up of how the Odyssey visualisation was built: the four data modelling decisions that made it possible, with the wrong turns left in.</p>
+        </div>
       </article>
     </div>
 
